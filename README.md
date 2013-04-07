@@ -24,7 +24,7 @@ Problems/To-Do
 ------------------
 
 * Some of the key-mapping is wrong. Please fix the KeyCodes.csv for the correct mapping
-* Multi-platform code (will need combining with PyUserInput when that project is working nicely with keyboards)
+* Multi-platform code (will need combining with [PyUserInput](https://github.com/SavinaRoja/PyUserInput) when that project is working nicely with keyboards)
 * Allow from IP/Range
 * Sticky_key functionality (having a mind block here)
 * Window control code
@@ -32,5 +32,7 @@ Problems/To-Do
 Many thanks to
 --------------
 
-[Techcess](http://techcess.co.uk)
-[Jabbla](http://www.jabbla.com)
+* [Mark Rowland](http://www.youtube.com/watch?v=_Ox94YrYtGo) who is the reason this thing is written. 
+* Ian from [Techcess](http://techcess.co.uk)
+* [Jabbla](http://www.jabbla.com)
+
