@@ -28,6 +28,7 @@ Problems/To-Do
 * Allow from IP/Range
 * Sticky_key functionality (having a mind block here)
 * Window control code
+* Turn it into a nice user friendly binary 
 
 Many thanks to
 --------------
