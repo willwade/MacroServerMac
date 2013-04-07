@@ -1,7 +1,7 @@
 (MIndExpress) MacroServer for Mac
 ===========
 
-A server, and set of modules for listening to a MindExpress client and controlling a mac.
+A server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac.
 
 
 Dependencies
