@@ -5,28 +5,32 @@
 # -*- coding: iso-8859-15 -*-
 
 # For the server
-import socket
-import threading
-import SocketServer
+from SocketServer import *
 # For the line command aspects
 import argparse
 # for the MExpressCall
 from MExpressHandler import MExpressHandler
+
+class METCPServer(SocketServer.TCPServer):
+    def __init__(self, server_address, RequestHandlerClass, bind_and_activate=True, debug=False):
+        self.debug = debug
+        SocketServer.TCPServer.__init__(self, server_address, RequestHandlerClass, bind_and_activate=True)
 
 class METCPHandler(SocketServer.BaseRequestHandler):
             
     def handle(self):
         # self.request is the TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
-        print "{} wrote:".format(self.client_address[0])
-        f = open(r'out.txt', 'w')
-        f.write(self.data)
-        f.close()
-        r = MExpressHandler(self.data, False)
+        if self.server.debug:
+            f = open(r'out.txt', 'w')
+            f.write(self.data)
+            f.close()
+        r = MExpressHandler(self.data, self.server.debug)
         if (r.isMex):
             r.doCommand()
         else:
-            print 'Not Mex'
+            if (self.server.debug):
+                print 'Not Mex'
         # if need to send anything back..
         #self.request.sendall(self.data.upper())
 
@@ -46,5 +50,5 @@ if __name__ == "__main__":
         hosts = args.host
     
     HOST, PORT = hosts[0], args.port
-    server = SocketServer.TCPServer((HOST, PORT), METCPHandler)
+    server = SocketServer.METCPServer((HOST, PORT), METCPHandler, args.debug)
     server.serve_forever()
