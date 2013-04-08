@@ -16,13 +16,18 @@ How to get started
 
 Run the server in the terminal:
 
-    ./MacroServerMac.py
+    python MacroServerMac.py
 
 It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. For help running the command run..
 
-    ./MacroServerMac.py --help
+    python MacroServerMac.py --help
 
 NB: at present it won't allow multiple IP address' despite it saying so!
+
+If you don't have/don't know what MindExpress is and just want to test what MindExpress sends try:
+
+    python TestClient.py
+
 
 Problems/To-Do
 ------------------
