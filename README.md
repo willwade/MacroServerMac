@@ -1,4 +1,4 @@
-(MIndExpress) MacroServer for Mac
+(MindExpress) MacroServer for Mac
 ===========
 
 A server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac.
@@ -18,7 +18,7 @@ Run the server
 
     ./MacroServerMac.py
 
-It will now listen for any calls in on the MindExpress port
+It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. 
 
 Problems/To-Do
 ------------------
