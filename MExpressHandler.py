@@ -26,6 +26,12 @@ class MExpressHandler(object):
         self.isMex = self.parseRequest(request);
         self.leftdrag = False
         self.enablePause = True
+        self.sticky = dict()
+        self.sticky['set'] = False
+        self.sticky['shift'] = False
+        self.sticky['control'] = False
+        self.sticky['alt'] = False
+        self.sticky['cmd'] = False
          
     def parseRequest(self,request):
         # first take the first {} as plug-in id
@@ -66,14 +72,14 @@ class MExpressHandler(object):
                 
     def control_send_key(self):
         #add in the modifier key. NB: this is a little short sighted - what if there were two?
-        if(self.data.has_key('modifier')):
-            if (self.data['modifier'] == 1):
+        if(self.data.has_key('modifier') or self.sticky['set']):
+            if (self.data['modifier'] == 1 or self.sticky['shift']):
                 cmdappend = ' using{shift}'
-            elif (self.data['modifier'] == 2):
+            elif (self.data['modifier'] == 2 or self.sticky['control']):
                 cmdappend = ' using{control}'
-            elif (self.data['modifier'] == 3):
+            elif (self.data['modifier'] == 3 or self.sticky['alt']):
                 cmdappend = ' using{alt}'        
-            elif (self.data['modifier'] == 4):
+            elif (self.data['modifier'] == 4 or self.sticky['cmd']):
                 cmdappend = ' using{command}'
             else:
                 cmdappend = ''
@@ -94,20 +100,22 @@ class MExpressHandler(object):
         
         self.logEvent('system call:'+cmd+cmdappend)
     
+    def _sticky_toggle(self,stickyKey):
+        if (self.sticky[stickyKey]):
+            self.sticky[stickyKey] = False
+        else:
+            self.sticky[stickyKey] = True
+    
     def control_sticky_key(self):
-        # Not implemented
         if(self.data.has_key('modifier')):
             if (self.data['modifier'] == 1):
-                cmdappend = ' using{shift}'
+                self._sticky_toggle('shift')
             elif (self.data['modifier'] == 2):
-                cmdappend = ' using{control}'
+                self._sticky_toggle('control')
             elif (self.data['modifier'] == 3):
-                cmdappend = ' using{alt}'        
+                self._sticky_toggle('alt')
             elif (self.data['modifier'] == 4):
-                cmdappend = ' using{command}'
-            else:
-                cmdappend = ''
-        self.sticky_cmdappend = cmdappend 
+                self._sticky_toggle('cmd')
         return True
         
     def control_pause(self):
