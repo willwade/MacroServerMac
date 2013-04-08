@@ -14,7 +14,7 @@ Depending on your platform, you will need the following python modules for this 
 How to get started
 ------------------
 
-Run the server
+Run the server in the terminal:
 
     ./MacroServerMac.py
 
