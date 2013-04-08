@@ -18,16 +18,12 @@ from AppleUIEvents import AppleKeyboardEvents
 
 class MExpressHandler(object):
     
-    def __init__(self,request,debug=None):
-        if (debug==None or debug==False):
-            self.debug = False
-        else:
-            self.debug = True
+    def __init__(self,request,debug=False):
+        self.debug = debug
         self.data = ''
         self.pluginid = ''
         self.mexinfo = ''
         self.isMex = self.parseRequest(request);
-        self.clickmac = './cliclick '
         self.leftdrag = False
         self.enablePause = True
          
