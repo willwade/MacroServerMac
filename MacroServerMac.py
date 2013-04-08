@@ -5,7 +5,7 @@
 # -*- coding: iso-8859-15 -*-
 
 # For the server
-from SocketServer import *
+import SocketServer
 # For the line command aspects
 import argparse
 # for the MExpressCall
@@ -44,11 +44,13 @@ if __name__ == "__main__":
     args = parser.parse_args() 
     hosts = list()
     
+    
     if isinstance(args.host,str):
         hosts.append(args.host)
     else:
         hosts = args.host
     
+
     HOST, PORT = hosts[0], args.port
-    server = SocketServer.METCPServer((HOST, PORT), METCPHandler, args.debug)
+    server = METCPServer((HOST, PORT), METCPHandler, debug=args.debug)
     server.serve_forever()
