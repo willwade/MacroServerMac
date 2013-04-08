@@ -18,7 +18,11 @@ Run the server in the terminal:
 
     ./MacroServerMac.py
 
-It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. 
+It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. For help running the command run..
+
+    ./MacroServerMac.py --help
+
+NB: at present it won't allow multiple IP address' despite it saying so!
 
 Problems/To-Do
 ------------------
@@ -29,6 +33,12 @@ Problems/To-Do
 * Sticky_key functionality (having a mind block here)
 * Window control code
 * Turn it into a nice user friendly binary 
+
+Fun(?!) asides
+------------------
+
+If you are looking to convert Windows Keyboard/Mouse commands look at AppleUIEvents.py. There are probably better ways in the long run, for example this code should really make use of [PyUserInput](https://github.com/SavinaRoja/PyUserInput)
+
 
 Many thanks to
 --------------

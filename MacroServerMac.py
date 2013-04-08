@@ -22,7 +22,7 @@ class METCPHandler(SocketServer.BaseRequestHandler):
         f = open(r'out.txt', 'w')
         f.write(self.data)
         f.close()
-        r = MExpressHandler(self.data, True)
+        r = MExpressHandler(self.data, False)
         if (r.isMex):
             r.doCommand()
         else:
