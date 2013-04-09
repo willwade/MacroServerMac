@@ -65,7 +65,6 @@ class AppleKeyboardEvents():
             self.keycodeloaded = True
 
         for line in self.keycodedict:
-            print line['Windows']
             if (line['Windows']==code):
                 return line['Mac']
                     

@@ -18,20 +18,15 @@ from AppleUIEvents import AppleKeyboardEvents
 
 class MExpressHandler(object):
     
-    def __init__(self,request,debug=False):
+    def __init__(self,request,meowi,debug=False):
         self.debug = debug
         self.data = ''
         self.pluginid = ''
         self.mexinfo = ''
         self.isMex = self.parseRequest(request);
-        self.leftdrag = False
         self.enablePause = True
-        self.sticky = dict()
-        self.sticky['set'] = False
-        self.sticky['shift'] = False
-        self.sticky['control'] = False
-        self.sticky['alt'] = False
-        self.sticky['cmd'] = False
+        #self.meowi is the keystate
+        self.meowi = meowi
          
     def parseRequest(self,request):
         # first take the first {} as plug-in id
@@ -71,15 +66,16 @@ class MExpressHandler(object):
         return func()
                 
     def control_send_key(self):
-        #add in the modifier key. NB: this is a little short sighted - what if there were two?
-        if(self.data.has_key('modifier') or self.sticky['set']):
-            if (self.data['modifier'] == 1 or self.sticky['shift']):
+        #add in the modifier key. 
+        # this may not be correct if two modifier keys set
+        if(self.data.has_key('modifier') or self.meowi.sticky['set']):
+            if (self.data['modifier'] == '1' or self.meowi.sticky['shift']):
                 cmdappend = ' using{shift}'
-            elif (self.data['modifier'] == 2 or self.sticky['control']):
+            elif (self.data['modifier'] == '2' or self.meowi.sticky['control']):
                 cmdappend = ' using{control}'
-            elif (self.data['modifier'] == 3 or self.sticky['alt']):
+            elif (self.data['modifier'] == '3' or self.meowi.sticky['alt']):
                 cmdappend = ' using{alt}'        
-            elif (self.data['modifier'] == 4 or self.sticky['cmd']):
+            elif (self.data['modifier'] == '4' or self.meowi.sticky['cmd']):
                 cmdappend = ' using{command}'
             else:
                 cmdappend = ''
@@ -99,23 +95,18 @@ class MExpressHandler(object):
             os.system(cmd+cmdappend)
         
         self.logEvent('system call:'+cmd+cmdappend)
-    
-    def _sticky_toggle(self,stickyKey):
-        if (self.sticky[stickyKey]):
-            self.sticky[stickyKey] = False
-        else:
-            self.sticky[stickyKey] = True
-    
+        self.logEvent('sticky:'+str(self.meowi.sticky))
+        
     def control_sticky_key(self):
         if(self.data.has_key('modifier')):
-            if (self.data['modifier'] == 1):
-                self._sticky_toggle('shift')
-            elif (self.data['modifier'] == 2):
-                self._sticky_toggle('control')
-            elif (self.data['modifier'] == 3):
-                self._sticky_toggle('alt')
-            elif (self.data['modifier'] == 4):
-                self._sticky_toggle('cmd')
+            if (self.data['modifier'] == '1'):
+                self.meowi.sticky_toggle('shift')
+            elif (self.data['modifier'] == '2'):
+                self.meowi.sticky_toggle('control')
+            elif (self.data['modifier'] == '3'):
+                self.meowi.sticky_toggle('alt')
+            elif (self.data['modifier'] == '4'):
+                self.meowi.sticky_toggle('cmd')
         return True
         
     def control_pause(self):
@@ -164,7 +155,7 @@ irection]><GotoCorner=[gtc]>
             # get currentPos
             if (self.data['direction']=='0'):
                 # Up
-                if (self.leftdrag):
+                if (self.meowi.leftdrag):
                     self.logEvent('leftdrag, up')
                     m.mousedrag(pos.x,pos.y-val)                      
                 else:
@@ -172,7 +163,7 @@ irection]><GotoCorner=[gtc]>
                     m.mousemove(pos.x,pos.y-val)      
             elif (self.data['direction']=='90'):
                 # Left
-                if (self.leftdrag):
+                if (self.meowi.leftdrag):
                     self.logEvent('leftdrag, left')
                     m.mousedrag(pos.x-val,pos.y)
                 else:   
@@ -180,7 +171,7 @@ irection]><GotoCorner=[gtc]>
                     m.mousemove(pos.x-val,pos.y)      
             elif (self.data['direction']=='270'):
                 # Right
-                if (self.leftdrag):
+                if (self.meowi.leftdrag):
                     self.logEvent('leftdrag, right')
                     m.mousedrag(pos.x+val,pos.y)                 
                 else:
@@ -188,7 +179,7 @@ irection]><GotoCorner=[gtc]>
                     m.mousemove(pos.x+val,pos.y) 
             elif (self.data['direction']=='180'):
                 # Down
-                if (self.leftdrag):
+                if (self.meowi.leftdrag):
                     self.logEvent('leftdrag, down')
                     m.mousedrag(pos.x,pos.y+val)      
                 else:
@@ -207,7 +198,7 @@ irection]><GotoCorner=[gtc]>
             elif(self.data['click']=='2' and self.data['direction']=='90'):
                 # not sure how this works
                  self.logEvent('drag lock on')
-                 self.leftdrag = True 
+                 self.meowi.leftdrag = True 
         return True
     
     

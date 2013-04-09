@@ -11,9 +11,30 @@ import argparse
 # for the MExpressCall
 from MExpressHandler import MExpressHandler
 
+class MEUIState(object):
+    def  __init__(self):
+        self.sticky = dict()
+        self.sticky['set'] = False
+        self.sticky['shift'] = False
+        self.sticky['control'] = False
+        self.sticky['alt'] = False
+        self.sticky['cmd'] = False
+        self.leftdrag = False
+    
+    def helloworld(self):
+        print 'hello world'
+
+    def sticky_toggle(self,stickyKey):
+        if (self.sticky[stickyKey]):
+            self.sticky[stickyKey] = False
+        else:
+            self.sticky[stickyKey] = True
+
 class METCPServer(SocketServer.TCPServer):
     def __init__(self, server_address, RequestHandlerClass, bind_and_activate=True, debug=False):
         self.debug = debug
+        #create instance of KeyBoard State 
+        self.meowi = MEUIState()
         SocketServer.TCPServer.__init__(self, server_address, RequestHandlerClass, bind_and_activate=True)
 
 class METCPHandler(SocketServer.BaseRequestHandler):
@@ -25,7 +46,7 @@ class METCPHandler(SocketServer.BaseRequestHandler):
             f = open(r'out.txt', 'w')
             f.write(self.data)
             f.close()
-        r = MExpressHandler(self.data, self.server.debug)
+        r = MExpressHandler(self.data, self.server.meowi, self.server.debug)
         if (r.isMex):
             r.doCommand()
         else:
