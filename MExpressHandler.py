@@ -70,13 +70,13 @@ class MExpressHandler(object):
         # this may not be correct if two modifier keys set
         if(self.data.has_key('modifier') or self.meowi.sticky['set']):
             if (self.data['modifier'] == '1' or self.meowi.sticky['shift']):
-                cmdappend = ' using{shift}'
+                cmdappend = ' using {shift down}'
             elif (self.data['modifier'] == '2' or self.meowi.sticky['control']):
-                cmdappend = ' using{control}'
+                cmdappend = ' using {control}'
             elif (self.data['modifier'] == '3' or self.meowi.sticky['alt']):
-                cmdappend = ' using{alt}'        
+                cmdappend = ' using {alt}'        
             elif (self.data['modifier'] == '4' or self.meowi.sticky['cmd']):
-                cmdappend = ' using{command}'
+                cmdappend = ' using {command}'
             else:
                 cmdappend = ''
                   
@@ -84,17 +84,17 @@ class MExpressHandler(object):
         # NB: when running this in the terminal note it will press the key twice seemingly - its not - it just echos the return from the command
         if (self.data.has_key('normalkey')):
             self.logEvent('normal send_key')
-            cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+self.data['normalkey']+"\"'"
-            os.system(cmd+cmdappend)
+            cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+self.data['normalkey']+"\""+cmdappend+"'"
+            os.system(cmd)
         elif (self.data.has_key('specialkey')):
             self.logEvent('special:'+self.data['specialkey'])
             k = AppleKeyboardEvents()
             specialcode = k.convertWintoMacCode(self.data['specialkey'])
             self.logEvent('converted to:'+specialcode)
-            cmd = "osascript -e 'tell application \"System Events\" to key code \""+specialcode+"\"'"
-            os.system(cmd+cmdappend)
+            cmd = "osascript -e 'tell application \"System Events\" to key code \""+specialcode+"\""+cmdappend+"'"
+            os.system(cmd)
         
-        self.logEvent('system call:'+cmd+cmdappend)
+        self.logEvent('system call:'+cmd)
         self.logEvent('sticky:'+str(self.meowi.sticky))
         
     def control_sticky_key(self):
