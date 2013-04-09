@@ -133,6 +133,9 @@ irection]><GotoCorner=[gtc]>
                3       Tile window
                4       Select Next Window
         """
+        if (self.data['subcommandid'] == 'select_next_app'):
+            cmd = "osascript -e 'tell application \""+self.data['text']+"\" to activate'"
+            os.system(cmd)
         return True
     
     def control_mouse(self):
