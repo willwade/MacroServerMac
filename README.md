@@ -34,8 +34,7 @@ Problems/To-Do
 
 * Some of the key-mapping is wrong. Please fix the KeyCodes.csv for the correct mapping
 * Multi-platform code (will need combining with [PyUserInput](https://github.com/SavinaRoja/PyUserInput) when that project is working nicely with keyboards)
-* Allow from IP/Range
-* Sticky_key functionality (having a mind block here)
+* Allow from IP/Range (You can specify the ip address in the line command - I just havent written the code to allow multiple address')
 * Window control code
 * Turn it into a nice user friendly binary 
 
