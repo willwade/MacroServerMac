@@ -43,6 +43,19 @@ Fun(?!) asides
 
 If you are looking to convert Windows Keyboard/Mouse commands look at AppleUIEvents.py. There are probably better ways in the long run, for example this code should really make use of [PyUserInput](https://github.com/SavinaRoja/PyUserInput)
 
+What are all the files? (/How does this work?)
+--------------
+When MacroServerMac.py is run a number of things happen:
+
+* A socket server listening to 12000 is run (METCPServer)
+* METCPServer sets up a class called MEUIState which initiates key states for the modifiers (all set to false) and the left drag 
+* METCPServer is redefined TCPSserver to hold this Object and the debug variable
+* A key is pressed in MindExpress. This opens up a TCP connection on 12000 to a machine and then squirts a small chunk of xml-ish data. 
+* METCPServer calls METCPHandler which in turn calls MExpressHandler (in MExpressHandler.py). 
+* MExpressHandler really deals with most of the logic from MindExpress. If you want to work out what is sent by MindExpress read this file. It imports AppleUIEvents which in turn opens up QuartzCoreGraphics (and takes an age on my machine). NB: Up to this point the code is pretty multi-platform. 
+* MExpressHandler works out what kind of command is being sent and then calls on AppleUIEvents if it needs to do any key mapping
+* MExpressHandler loads in the MEUIState (meowi) object when called to look/set the sticky key state of the keys
+* MExpressHandler sets keys using applescript and mouse commands using Quartz. 
 
 Many thanks to
 --------------
