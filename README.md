@@ -9,7 +9,7 @@ Dependencies
 
 Depending on your platform, you will need the following python modules for this to function:
 
-  * Mac - Quartz
+  * Mac - Quartz (Not really a dependency as such since its core)
 
 How to get started
 ------------------
