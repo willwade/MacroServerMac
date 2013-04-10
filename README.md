@@ -57,7 +57,7 @@ When MacroServerMac.py is run a number of things happen:
 * MExpressHandler loads in the MEUIState (meowi) object when called to look/set the sticky key state of the keys
 * MExpressHandler sets keys using applescript and mouse commands using Quartz. 
 
-For information on the API from MindExpress [read the README-API.md documentation](README-API.MD)
+For information on the API from MindExpress [read the README-API.md documentation](README-API.md)
 
 Many thanks to
 --------------
