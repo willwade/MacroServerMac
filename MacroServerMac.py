@@ -23,9 +23,6 @@ class MEUIState(object):
         self.sticky['cmd'] = False
         self.leftdrag = False
     
-    def helloworld(self):
-        print 'hello world'
-
     def sticky_toggle(self,stickyKey):
         if (self.sticky[stickyKey]):
             self.sticky[stickyKey] = False
