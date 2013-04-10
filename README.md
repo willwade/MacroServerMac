@@ -35,8 +35,9 @@ Problems/To-Do
 * Some of the key-mapping is wrong. Please fix the KeyCodes.csv for the correct mapping
 * Multi-platform code (will need combining with [PyUserInput](https://github.com/SavinaRoja/PyUserInput) when that project is working nicely with keyboards)
 * Allow from IP/Range (You can specify the ip address in the line command - I just havent written the code to allow multiple address')
-* Window control code
+* Window control code (It can launch applications. Just not control the window placement. Reason for this is it's not a very Mac thing to do/care about.. I'm not sure this will see the light of day..)
 * Turn it into a nice user friendly binary 
+* Develop some nice MindExpress Keyboards
 
 Fun(?!) asides
 ------------------
