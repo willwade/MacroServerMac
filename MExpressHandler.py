@@ -20,8 +20,7 @@ from AppleUIEvents import AppleKeyboardEvents
 
 class MExpressHandler(object):
     
-    def __init__(self,request,meowi,debug=False):
-        self.debug = debug
+    def __init__(self,request,meowi):
         self.data = ''
         self.pluginid = ''
         self.mexinfo = ''
