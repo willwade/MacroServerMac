@@ -4,6 +4,8 @@
 # Date: April 2013
 # -*- coding: iso-8859-15 -*-
 
+# For debug
+import logging
 # For the server
 import SocketServer
 # For the line command aspects
@@ -35,6 +37,9 @@ class METCPServer(SocketServer.TCPServer):
         self.debug = debug
         #create instance of KeyBoard State 
         self.meowi = MEUIState()
+        #set up logging
+        FORMAT = '%(asctime)s  %(levelname)s %(message)s'
+        logging.basicConfig(filename='MacroServerMac.log', level=logging.DEBUG, format=FORMAT)
         SocketServer.TCPServer.__init__(self, server_address, RequestHandlerClass, bind_and_activate=True)
 
 class METCPHandler(SocketServer.BaseRequestHandler):
@@ -43,15 +48,13 @@ class METCPHandler(SocketServer.BaseRequestHandler):
         # self.request is the TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
         if self.server.debug:
-            f = open(r'out.txt', 'w')
-            f.write(self.data)
-            f.close()
+            logging.debug(self.data)
         r = MExpressHandler(self.data, self.server.meowi, self.server.debug)
         if (r.isMex):
             r.doCommand()
         else:
             if (self.server.debug):
-                print 'Not Mex'
+                logging.warning('Not Mex')
         # if need to send anything back..
         #self.request.sendall(self.data.upper())
 

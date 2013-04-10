@@ -9,6 +9,8 @@ import re
 import os, platform
 # to do the waiting
 import time
+# For debug
+import logging
 # To map the key codes
 import csv
 # The Mac Mouse Event
@@ -36,7 +38,7 @@ class MExpressHandler(object):
             self.pluginid = p.findall(request)[0]
         except:
             # No pluginid found
-            self.logEvent('No pluginid found')
+            logging.debug('No pluginid found')
             return False
         # lets get the command
         p = re.compile('<([\w]+)="([^"]+)"')
@@ -47,13 +49,9 @@ class MExpressHandler(object):
         if (self.data.has_key('X_STAVersion')):
             self.mexinfo['X_STAVersion'] = self.data['X_STAVersion']
             self.data.pop('X_STAVersion', None)
-        self.logEvent('Data all parsed')
+        logging.debug('Data all parsed')
         return True
-    
-    def logEvent(self,msg):
-        if (self.debug):
-            print msg
-            
+                
     def doCommand(self):
         # the following could allow this library to be multiplatform..
         pform = platform.system()
@@ -61,7 +59,7 @@ class MExpressHandler(object):
         func_name = 'control_'+str(self.data['command'])
         # if doing multi-platform    
         #func_name = 'control_'+pform+'_'++str(self.data['command'])
-        self.logEvent('About to call..'+func_name)      
+        logging.debug('About to call..'+func_name)      
         func = getattr(self,func_name)
         return func()
                 
@@ -83,19 +81,19 @@ class MExpressHandler(object):
         # Now do something with the normal/specialkey 
         # NB: when running this in the terminal note it will press the key twice seemingly - its not - it just echos the return from the command
         if (self.data.has_key('normalkey')):
-            self.logEvent('normal send_key')
+            logging.debug('normal send_key')
             cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+self.data['normalkey']+"\""+cmdappend+"'"
             os.system(cmd)
         elif (self.data.has_key('specialkey')):
-            self.logEvent('special:'+self.data['specialkey'])
+            logging.debug('special:'+self.data['specialkey'])
             k = AppleKeyboardEvents()
             specialcode = k.convertWintoMacCode(self.data['specialkey'])
-            self.logEvent('converted to:'+specialcode)
+            logging.debug('converted to:'+specialcode)
             cmd = "osascript -e 'tell application \"System Events\" to key code \""+specialcode+"\""+cmdappend+"'"
             os.system(cmd)
         
-        self.logEvent('system call:'+cmd)
-        self.logEvent('sticky:'+str(self.meowi.sticky))
+        logging.debug('system call:'+cmd)
+        logging.debug('sticky:'+str(self.meowi.sticky))
         
     def control_sticky_key(self):
         if(self.data.has_key('modifier')):
@@ -155,55 +153,55 @@ irection]><GotoCorner=[gtc]>
         m = AppleMouseEvents()
         pos = m.currentPos()
         val = float(self.data['value'])
-        self.logEvent('Mouse movement')
+        logging.debug('Mouse movement')
       
         if (self.data['subcommandid']=='change_location'):
             # get currentPos
             if (self.data['direction']=='0'):
                 # Up
                 if (self.meowi.leftdrag):
-                    self.logEvent('leftdrag, up')
+                    logging.debug('leftdrag, up')
                     m.mousedrag(pos.x,pos.y-val)                      
                 else:
-                    self.logEvent('up')
+                    logging.debug('up')
                     m.mousemove(pos.x,pos.y-val)      
             elif (self.data['direction']=='90'):
                 # Left
                 if (self.meowi.leftdrag):
-                    self.logEvent('leftdrag, left')
+                    logging.debug('leftdrag, left')
                     m.mousedrag(pos.x-val,pos.y)
                 else:   
-                    self.logEvent('left')
+                    logging.debug('left')
                     m.mousemove(pos.x-val,pos.y)      
             elif (self.data['direction']=='270'):
                 # Right
                 if (self.meowi.leftdrag):
-                    self.logEvent('leftdrag, right')
+                    logging.debug('leftdrag, right')
                     m.mousedrag(pos.x+val,pos.y)                 
                 else:
-                    self.logEvent('right')
+                    logging.debug('right')
                     m.mousemove(pos.x+val,pos.y) 
             elif (self.data['direction']=='180'):
                 # Down
                 if (self.meowi.leftdrag):
-                    self.logEvent('leftdrag, down')
+                    logging.debug('leftdrag, down')
                     m.mousedrag(pos.x,pos.y+val)      
                 else:
-                    self.logEvent('down')
+                    logging.debug('down')
                     m.mousemove(pos.x,pos.y+val)      
         elif (self.data['subcommandid']=='click'):
             if(self.data['click']=='0' and self.data['direction']=='90'):
-                 self.logEvent('click')
+                 logging.debug('click')
                  m.mousesingleclick(pos.x,pos.y)
             elif(self.data['click']=='1' and self.data['direction']=='90'):
-                 self.logEvent('dbl-click')
+                 logging.debug('dbl-click')
                  m.mousedblclick(pos.x,pos.y)
             elif(self.data['click']=='0' and self.data['direction']=='270'):
-                 self.logEvent('r-click')
+                 logging.debug('r-click')
                  m.mouserclick(pos.x,pos.y)
             elif(self.data['click']=='2' and self.data['direction']=='90'):
                 # not sure how this works
-                 self.logEvent('drag lock on')
+                 logging.debug('drag lock on')
                  self.meowi.leftdrag = True 
         return True
     
