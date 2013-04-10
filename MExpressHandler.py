@@ -117,6 +117,9 @@ class MExpressHandler(object):
     
     def control_window_control(self):
         """
+        I'm not too keen on all this for OSX but for completeness I think we should use:
+        http://www.sirver.net/blog/2012/01/04/move-window-done-right/
+        
       <SubCommandId=1><Type=min>
         SubCommandID = 1, Type= Min - Minimise active
         SubCommandID = 1, Type= Max - Maximise active
