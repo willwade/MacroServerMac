@@ -28,11 +28,11 @@ If you don't have/don't know what MindExpress is and just want to test what Mind
 
     python MacroClient/Client.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'
     
-or something like:
+to move the mouse. or to send a keystroke, something like:
     
     python MacroClient/Client.py --host 192.168.1.121 -cmd send_key -scmd "normalkey:k|modifier:0"
     
-to move the mouse. NB: With this you don't need MindExpress. It will control your mac over the air through the commandline! 
+NB: With this you don't need MindExpress. It will control your mac over the air through the commandline! 
 
 If you want to run the app without python on Windows you can [download the binary here](http://app-macro.s3.amazonaws.com/Client.exe)
 
