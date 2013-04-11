@@ -4,13 +4,6 @@
 A server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac.
 
 
-Dependencies
-------------
-
-Depending on your platform, you will need the following python modules for this to function:
-
-  * Mac - Quartz (Not really a dependency as such since its core)
-
 How to get started
 ------------------
 
