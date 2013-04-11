@@ -20,19 +20,21 @@ Run the server in the terminal:
 
 It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. For help running the command run..
 
-    python MacroServerMac.py --help
+    python MacroServer/MacroServerMac.py --help
 
 NB: at present it won't allow multiple IP address' despite it saying so!
 
 If you don't have/don't know what MindExpress is and just want to test what MindExpress sends try:
 
-    python TestClient.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'
+    python MacroClient/Client.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'
     
-    or
+or something like:
     
-    python TestClient.py --host 192.168.1.121 -cmd send_key -scmd "normalkey:k|modifier:0"
+    python MacroClient/Client.py --host 192.168.1.121 -cmd send_key -scmd "normalkey:k|modifier:0"
     
 to move the mouse. NB: With this you don't need MindExpress. It will control your mac over the air through the commandline! 
+
+If you want to run the app without python on Windows you can [download the binary here](http://app-macro.s3.amazonaws.com/Client.exe)
 
 Problems/To-Do
 ------------------

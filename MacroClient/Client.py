@@ -36,9 +36,6 @@ parser.add_argument('--xmelang','-xl', type=int, default='9', help='Language int
 parser.add_argument('--xstaver','-xs', type=str, default='1.1.1.1261', help='Version ID of this client')
 args = parser.parse_args() 
 
-# Call like this
-# python TestClient.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'
-
 # Connect to the server
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((args.host, args.port))
