@@ -26,8 +26,9 @@ NB: at present it won't allow multiple IP address' despite it saying so!
 
 If you don't have/don't know what MindExpress is and just want to test what MindExpress sends try:
 
-    python TestClient.py
-
+    python TestClient.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'
+    
+to move the mouse
 
 Problems/To-Do
 ------------------
