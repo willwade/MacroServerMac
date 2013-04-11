@@ -1,4 +1,4 @@
-(MindExpress) MacroServer for Mac
+(MindExpress) MacroServer/Client for Mac
 ===========
 
 A server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac.
@@ -41,7 +41,8 @@ Problems/To-Do
 * Allow from IP/Range (You can specify the ip address in the line command - I just havent written the code to allow multiple address')
 * Window control code (It can launch applications. Just not control the window placement. Reason for this is it's not a very Mac thing to do/care about.. I'm not sure this will see the light of day..)
 * Turn it into a nice user friendly binary 
-* Develop some nice MindExpress Keyboards
+* Develop some nice Keyboards
+* Somehow send a start moving and stop moving mouse command
 
 Fun(?!) asides
 ------------------
