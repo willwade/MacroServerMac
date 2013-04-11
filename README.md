@@ -14,7 +14,9 @@ Depending on your platform, you will need the following python modules for this 
 How to get started
 ------------------
 
-Run the server in the terminal:
+##Server##
+
+Run the server in the terminal (on the Mac):
 
     python MacroServerMac.py
 
@@ -24,7 +26,9 @@ It will now listen for any calls in on the MindExpress port. Please make sure th
 
 NB: at present it won't allow multiple IP address' despite it saying so!
 
-If you don't have/don't know what MindExpress is and just want to test what MindExpress sends try:
+##Client##
+
+If you don't have/don't know what MindExpress is and just want to test what MindExpress sends you can use the Client. You can also use this for applications other than MindExpress by sending the string to call the executable in a shell e.g.:
 
     python MacroClient/Client.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'
     
