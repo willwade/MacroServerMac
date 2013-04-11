@@ -44,6 +44,12 @@ Fun(?!) asides
 
 If you are looking to convert Windows Keyboard/Mouse commands look at AppleUIEvents.py. There are probably better ways in the long run, for example this code should really make use of [PyUserInput](https://github.com/SavinaRoja/PyUserInput)
 
+Why??!
+------------------
+
+Well because if you want to control a computer, send text to another computer, its not the easiest if you use an alternative input method for a PC. TeamViewer (and others) are OK but they don't convert the Mac Keycodes reliably.
+
+
 What are all the files? (/How does this work?)
 --------------
 When MacroServerMac.py is run a number of things happen:
