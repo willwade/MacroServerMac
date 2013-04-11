@@ -1,6 +1,10 @@
 """
     Allows you to test the MacroServer
     NB: Easy to break! Not much error checking
+    
+    # To turn this into a binary
+    python pyinstaller.py -F -w Client.py
+    (w for windowless version)
 """
 
 import socket
