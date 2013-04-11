@@ -34,7 +34,7 @@ to move the mouse. or to send a keystroke, something like:
     
 NB: With this you don't need MindExpress. It will control your mac over the air through the commandline! 
 
-If you want to run the app without python on Windows you can [download the binary here](http://app-macro.s3.amazonaws.com/Client.exe)
+If you want to run the app without python on Windows you can [download the binary here](http://app-macro.s3.amazonaws.com/Client.exe) or on [Mac here](http://app-macro.s3.amazonaws.com/ClientMacOSX64.zip)
 
 Problems/To-Do
 ------------------
