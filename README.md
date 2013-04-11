@@ -33,40 +33,10 @@ NB: With this you don't need MindExpress. It will control your mac over the air 
 
 If you want to run the app without python on Windows you can [download the binary here](http://app-macro.s3.amazonaws.com/Client.exe) or on [Mac here](http://app-macro.s3.amazonaws.com/ClientMacOSX64.zip)
 
-Full syntax:
+For correct syntax see:
 
-    usage: MindExpressTestClient [-h] [--host HOST] [--port PORT] [--debug]
-                                 [--data DATA] [--version] [--pluginid PLUGINID]
-                                 [--subject SUBJECT] [--command COMMAND]
-                                 [--subcommand SUBCOMMAND] [--xmeuser XMEUSER]
-                                 [--xmelang XMELANG] [--xstaver XSTAVER]
+    python MacroClient/Client.py --help
 
-    Pretends to be a MindExpress client
-
-    optional arguments:
-      -h, --help            show this help message and exit
-      --host HOST, -ho HOST
-                            Connect to what server? Default: localhost
-      --port PORT, -p PORT  Change the default Mind Express Port number. Default:
-                            12000
-      --debug, -db          Debug the server, and recieve the debug notes
-      --data DATA           Read data from a file
-      --version             Get version number
-      --pluginid PLUGINID, -pid PLUGINID
-                            The Plugin-ID of the server
-      --subject SUBJECT, -sbj SUBJECT
-                            Send what subject
-      --command COMMAND, -cmd COMMAND
-                            Send what command
-      --subcommand SUBCOMMAND, -scmd SUBCOMMAND
-                            Send what sub-command. Note: Needed subelements
-                            provided in a key:value pair
-      --xmeuser XMEUSER, -xu XMEUSER
-                            MindExpress User
-      --xmelang XMELANG, -xl XMELANG
-                            Language int
-      --xstaver XSTAVER, -xs XSTAVER
-                            Version ID of this client
 
 Problems/To-Do
 ------------------
