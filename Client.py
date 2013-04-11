@@ -1,3 +1,8 @@
+"""
+    Allows you to test the MacroServer
+    NB: Easy to break! Not much error checking
+"""
+
 import socket
 import argparse
 import logging
@@ -5,7 +10,7 @@ import logging
 def dataform(args):
     data = '{'+args.pluginid+'}'
     data += '<subject="'+args.subject+'"\>'
-    data += '<command ="'+args.command+'"\>'
+    data += '<command="'+args.command+'"\>'
     for subcmd in args.subcommand.split('|'):
         data += '<'+str(subcmd.split(':')[0])+'="'+subcmd.split(':')[1]+'"\>'
     data += '<X_MEUser"@'+args.xmeuser+'@"\>'
@@ -38,6 +43,7 @@ args = parser.parse_args()
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((args.host, args.port))
 # Send the data
+data = dataform(args)
 len_sent = s.send(data)
 # Clean up
 s.close()
