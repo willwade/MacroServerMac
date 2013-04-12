@@ -65,6 +65,7 @@ class MExpressHandler(object):
     def control_send_key(self):
         #add in the modifier key. 
         # this may not be correct if two modifier keys set
+        cmdappend = ''
         if(self.data.has_key('modifier') or self.meowi.sticky['set']):
             if (self.data['modifier'] == '1' or self.meowi.sticky['shift']):
                 cmdappend = ' using {shift down}'
@@ -73,9 +74,7 @@ class MExpressHandler(object):
             elif (self.data['modifier'] == '3' or self.meowi.sticky['alt']):
                 cmdappend = ' using {alt}'        
             elif (self.data['modifier'] == '4' or self.meowi.sticky['cmd']):
-                cmdappend = ' using {command}'
-            else:
-                cmdappend = ''
+                cmdappend = ' using {command}'                
                   
         # Now do something with the normal/specialkey 
         # NB: when running this in the terminal note it will press the key twice seemingly - its not - it just echos the return from the command
