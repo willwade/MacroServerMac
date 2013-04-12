@@ -33,9 +33,9 @@ NB: With this you don't need MindExpress. It will control your mac over the air 
 
 If you don't have Python and want to experiment with this you can download a binary for Windows and Mac.
 
-* [Windows Binary - That runs in a command prompt interface](http://app-macro.s3.amazonaws.com/Client.exe.zip)
-* [Windows Binary - That can be called by other programs and doesn't open a Window](http://app-macro.s3.amazonaws.com/ClientW.exe.zip) (NB: any errors that occur you won't be notified using this approach)
-* [Mac Binary (64Bit)](http://app-macro.s3.amazonaws.com/ClientMacOSX64.zip)
+* [Windows Binary - That runs in a command prompt interface](https://s3-eu-west-1.amazonaws.com/app-macro/Client.exe.zip)
+* [Windows Binary - That can be called by other programs and doesn't open a Window](https://s3-eu-west-1.amazonaws.com/app-macro/ClientW.exe.zip) (NB: any errors that occur you won't be notified using this approach)
+* [Mac Binary (64Bit)](https://s3-eu-west-1.amazonaws.com/app-macro/ClientMacOSX64.zip)
 
 For correct syntax see:
 
