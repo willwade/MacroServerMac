@@ -20,7 +20,7 @@ from AppleUIEvents import AppleKeyboardEvents
 
 class MExpressHandler(object):
     
-    def __init__(self,request,meowi):
+    def __init__(self,request,meowi,notifier):
         self.data = ''
         self.pluginid = ''
         self.mexinfo = ''
@@ -28,6 +28,8 @@ class MExpressHandler(object):
         self.enablePause = True
         #self.meowi is the keystate
         self.meowi = meowi
+        #growl
+        self.notifier = notifier
          
     def parseRequest(self,request):
         # first take the first {} as plug-in id
@@ -101,15 +103,19 @@ class MExpressHandler(object):
         if(self.data.has_key('modifier')):
             if (self.data['modifier'] == '1'):
                 self.meowi.sticky_toggle('shift')
+                self.notifier.sendMessage('shift',self.meowi.sticky['shift'])
                 logging.debug('shift set')
             elif (self.data['modifier'] == '2'):
                 self.meowi.sticky_toggle('control')
+                self.notifier.sendMessage('control',self.meowi.sticky['control'])
                 logging.debug('ctrl set')
             elif (self.data['modifier'] == '3'):
                 self.meowi.sticky_toggle('option')
+                self.notifier.sendMessage('option',self.meowi.sticky['option'])
                 logging.debug('option set')
             elif (self.data['modifier'] == '4'):
                 self.meowi.sticky_toggle('command')
+                self.notifier.sendMessage('command',self.meowi.sticky['command'])
                 logging.debug('cmd set')
         return True
         
