@@ -59,12 +59,12 @@ Problems/To-Do
 
 * Some of the key-mapping is wrong. Please fix the KeyCodes.csv for the correct mapping
 * Implement some better exception code - you will need to keep an eye on the terminal for any exceptions caused as well as the log file
-* Speed it up. My guess is the slowness is in the 3/4 regex's that are done when extracting the data from the pseudo-xml. It could be done in one.
-* Multi-platform code (will need combining with [PyUserInput](https://github.com/SavinaRoja/PyUserInput) when that project is working nicely with keyboards)
+* Speed it up. My guess is the slowness is in the 3/4 regex's that are done when extracting the data from the pseudo-xml. It could be done in one. Also the csv file is re-read on each key. That could be put in memory since its small enough. 
+* Multi-platform code (will need combining with [PyUserInput](https://github.com/SavinaRoja/PyUserInput) when that project is working nicely with keyboards). Should be straightforward enough - particularly Windows (only reason I can think of doing this is making use of Growl notifier on Windows)
 * Allow from IP/Range (You can specify the ip address in the line command - I just havent written the code to allow multiple address')
 * Window control code (It can launch applications. Just not control the window placement. Reason for this is it's not a very Mac thing to do/care about.. I'm not sure this will see the light of day..)
 * Turn it into a nice user friendly binary 
-* Develop some nice Keyboards
+* Develop some tabs for the keyboard demo, demonstrating various Mac application shortcuts
 * Somehow send a start moving and stop moving mouse command
 
 Fun(?!) asides
