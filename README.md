@@ -38,10 +38,12 @@ to move the mouse. or to send a keystroke, something like:
     
 NB: With this you don't need MindExpress. It will control your mac over the air through the commandline! 
 
-If you don't have Python and want to experiment with this you can download a binary for Windows and Mac.
+If you don't have Python and want to experiment with this you can download a binary for Windows and Mac. It works exactly the same. e.g. 
 
+    C:\Client.exe --host 192.168.1.121 -cmd send_key -scmd "normalkey:k|modifier:0"
+    
 * [Windows Binary - That runs in a command prompt interface](https://s3-eu-west-1.amazonaws.com/app-macro/Client.exe.zip)
-* [Windows Binary - That can be called by other programs and doesn't open a Window](https://s3-eu-west-1.amazonaws.com/app-macro/ClientW.exe.zip) (NB: any errors that occur you won't be notified using this approach)
+* [Windows Binary - That can be called by other programs and doesn't open a Window](https://s3-eu-west-1.amazonaws.com/app-macro/ClientW.exe.zip) (NB: any errors that occur will go silently..)
 * [Mac Binary (64Bit)](https://s3-eu-west-1.amazonaws.com/app-macro/ClientMacOSX64.zip)
 
 For correct syntax see:
