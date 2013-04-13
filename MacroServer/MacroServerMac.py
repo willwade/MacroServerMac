@@ -17,9 +17,10 @@ try:
     import gntp.notifier # Standard
 except ImportError:
     logging.warning('gntp not installed')
-        
+    
+#https://github.com/kfdm/gntp    
 class GrowlMESender(object):
-
+    
     def  __init__(self):
         self.growl = gntp.notifier.GrowlNotifier(
             applicationName = "MacroServer",

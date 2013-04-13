@@ -19,6 +19,10 @@ It will now listen for any calls in on the MindExpress port. Please make sure th
 
 NB: at present it won't allow multiple IP address' despite it saying so!
 
+###Dependencies###
+
+If you want fancy notifications of which modifier key has been set by MindExpress install the Growl Notfication plug-in. Don't fret its easy - and the results are neat. [See the information here for installation](https://github.com/kfdm/gntp#installation).
+
 ##Client##
 
 [Find here an example MindExpress-For-Mac jmm file](Layouts/README.md) that I do know works(!). 
