@@ -21,6 +21,9 @@ NB: at present it won't allow multiple IP address' despite it saying so!
 
 ##Client##
 
+[Find here an example MindExpress-For-Mac jmm file](Layouts/README.md) that I do know works(!). 
+
+
 If you don't have/don't know what MindExpress is and just want to test what MindExpress sends you can use the Client. You can also use this for applications other than MindExpress by sending the string to call the executable in a shell e.g.:
 
     python MacroClient/Client.py -cmd mouse -scmd 'subcommandid:change_location|value:100|direction:0|click:0'

@@ -1,0 +1,1059 @@
+<Document nuNum="1" id="440675e0-a3ab-11e2-3d8e-06888e1265b8" lastupdate="20130413192408">
+<Version app="ME_CE" version="1"/>
+<Info/>
+<Template name=""/>
+<Settings>
+<AutoReturn startpage="0" level1="1"/>
+<Drag sound="1"/>
+<WaitOnSpeech value="0"/>
+<Letter nospeechwhenactive="0" startwithletter="1" addwheninvisible="1" storeletterlimitsymbols="3"/>
+<Prediction type="1" prefered="6" prefered2="1979"/>
+<WindowSize save="1" x="4" y="214" w="1020" h="508" max="0"/>
+<SelectionOverride value="0"/>
+<PrinterSettings lStructSize="0" Flags="1208340495" nFromPage="53256" nToPage="51205" nMinPage="53263" nMaxPage="22533" nCopies="1" PP_FullPage="1" PP_KeepRatio="1" PP_X="200" PP_Y="150" PP_CenterPage="1" PP_PrintText="1"/>
+<Selection type="0">
+<Mouse>
+</Mouse>
+<Joystick>
+</Joystick>
+<Scan>
+</Scan>
+</Selection>
+</Settings>
+<AdditionalData/>
+<Styles>
+<Style name="Key">
+<Border color="373737" radius="5"/>
+<Background color="5F5F5F" color2="808080" gradient="toptobottom"/>
+<Text>
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image scale="60"/>
+</Style>
+<Style name="WhiteKey">
+<Border width="0" radius="5"/>
+<Background color2="C0C0C0" gradient="toptobottom"/>
+<Text pos="Center">
+<Font height="36" name="VAGRoundedLightSSi"/>
+</Text>
+<Image pos="BottomCenter" scale="20"/>
+</Style>
+<Style name="Key_Shift">
+<Border color="373737" radius="5"/>
+<Background color="008000" color2="808080" gradient="toptobottom"/>
+<Text pos="Center">
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image pos="BottomCenter" scale="20"/>
+</Style>
+<Style name="KeyMuted">
+<Border color="373737" radius="5"/>
+<Background color="808080" color2="808080" gradient="toptobottom"/>
+<Text pos="Center">
+<Font height="36" name="VAGRoundedLightSSi" color="B2B2B2"/>
+</Text>
+<Image pos="BottomCenter" scale="20"/>
+</Style>
+<Style name="Key_Off">
+<Border color="373737" radius="5"/>
+<Background color="FF8080" color2="808080" gradient="toptobottom"/>
+<Text pos="Center">
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image pos="BottomCenter" scale="20"/>
+</Style>
+<Style name="KeyPlain">
+<Border color="373737" radius="5"/>
+<Background color="5F5F5F" color2="808080" gradient="toptobottom"/>
+<Text pos="Center">
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image scale="40"/>
+</Style>
+<Style name="KeyImageOnly">
+<Border color="373737" radius="5"/>
+<Background color="5F5F5F" color2="808080" gradient="toptobottom"/>
+<Text>
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image pos="BottomLeft"/>
+</Style>
+<Style name="KeyShifted">
+<Border color="373737" radius="5"/>
+<Background color="5F5F5F" color2="808080" gradient="toptobottom"/>
+<Text>
+<Font height="36" name="VAGRoundedLightSSi" color="808080"/>
+</Text>
+<Image scale="60"/>
+</Style>
+<Style name="KeyImgOnlySmall">
+<Border color="373737" radius="5"/>
+<Background color="5F5F5F" color2="808080" gradient="toptobottom"/>
+<Text>
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image pos="Center" scale="50"/>
+</Style>
+<Style name="MouseKeys">
+<Border color="373737" radius="5"/>
+<Background color="8A762F" color2="808080" gradient="toptobottom"/>
+<Text>
+<Font height="36" name="VAGRoundedLightSSi" color="FFFFFF"/>
+</Text>
+<Image scale="60"/>
+</Style>
+</Styles>
+<Pages>
+<Page name="StartPage" id="6ad0a000-a3bb-11e2-37bc-06f273240e4d" rows="6" columns="14" fieldspacing="10" defaultstyle="KeyMuted">
+<Background backcolor="C0C0C0" gradient="toptobottom" backcolor2="FFFFFF"/>
+<Fld label="F1" pos="0;1">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;112&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F2" pos="0;2">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;113&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="2" pos="1;2">
+<Sym custom="1" size="1022" crc="90B6BCAA" fname="KeyboardKeys\@.png"/>
+<Act param="2" type="0"/>
+</Fld>
+<Fld label="1" pos="1;1">
+<Sym custom="1" size="373" crc="B256FA19" fname="KeyboardKeys\!.png"/>
+<Act param="1" type="0"/>
+</Fld>
+<Fld label="4" pos="1;4">
+<Sym custom="1" size="793" crc="1F1399CF" fname="KeyboardKeys\$.png"/>
+<Act param="4" type="0"/>
+</Fld>
+<Fld label="3" pos="1;3">
+<Sym custom="1" size="691" crc="EBD77348" fname="KeyboardKeys\£.png"/>
+<Act param="3" type="0"/>
+</Fld>
+<Fld label="caps" pos="3;0">
+<Act name="LoadPage" param="Keyboard_Caps"/>
+</Fld>
+<Fld label="q" pos="2;1">
+<Act param="q" type="6"/>
+</Fld>
+<Fld label="w" pos="2;2">
+<Act param="w" type="0"/>
+</Fld>
+<Fld label="e" pos="2;3">
+<Act param="e" type="0"/>
+</Fld>
+<Fld label="shift" pos="4;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;1&quot;\&gt;"/>
+</Fld>
+<Fld label="a" pos="3;1">
+<Act param="a" type="6"/>
+</Fld>
+<Fld label="s" pos="3;2">
+<Act param="s" type="0"/>
+</Fld>
+<Fld label="d" pos="3;3">
+<Act param="d" type="0"/>
+</Fld>
+<Fld label="F4" pos="0;4">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;115&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="§" pos="1;0">
+<Sym custom="1" size="461" crc="411D4897" fname="KeyboardKeys\plusminus.png"/>
+<Act param="§" type="6"/>
+</Fld>
+<Fld label="F6" pos="0;6">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;117&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F7" pos="0;7">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;118&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F8" pos="0;8">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;119&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F9" pos="0;9">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;120&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F10" pos="0;10">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;121&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F11" pos="0;11">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;122&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F12" pos="0;12">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;123&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="On" style="Key_Off" pos="5;0">
+<Act name="LoadPage" param="Keyboard"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sendonoff&quot;\&gt;&lt;SendOnOff=&quot;3&quot;\&gt;&lt;IP=&quot;192.168.1.78&quot;\&gt;"/>
+</Fld>
+<Fld label="5" pos="1;5">
+<Sym custom="1" size="906" crc="11CE4F88" fname="KeyboardKeys\percent.png"/>
+<Act param="5" type="0"/>
+</Fld>
+<Fld label="6" pos="1;6">
+<Sym custom="1" size="551" crc="C15CF1C5" fname="KeyboardKeys\^.png"/>
+<Act param="6" type="0"/>
+</Fld>
+<Fld label="7" pos="1;7">
+<Sym custom="1" size="886" crc="7CDD24C5" fname="KeyboardKeys\&amp;.png"/>
+<Act param="7" type="0"/>
+</Fld>
+<Fld label="8" pos="1;8">
+<Sym custom="1" size="547" crc="9F5DBD84" fname="KeyboardKeys\star.png"/>
+<Act param="8" type="0"/>
+</Fld>
+<Fld label="9" pos="1;9">
+<Sym custom="1" size="447" crc="FB84FC4F" fname="KeyboardKeys\(.png"/>
+<Act param="9" type="0"/>
+</Fld>
+<Fld label="0" pos="1;10">
+<Sym custom="1" size="447" crc="4828181E" fname="KeyboardKeys\).png"/>
+<Act param="0" type="0"/>
+</Fld>
+<Fld label="-" pos="1;11">
+<Sym custom="1" size="373" crc="B256FA19" fname="KeyboardKeys\!.png"/>
+<Act param="-" type="0"/>
+</Fld>
+<Fld label="=" pos="1;12">
+<Sym custom="1" size="456" crc="1385ADFD" fname="KeyboardKeys\plus.png"/>
+<Act param="+" type="0"/>
+</Fld>
+<Fld pos="1;13">
+<Sym custom="1" size="488" crc="7A6A566E" fname="Edited\left (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;46&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="r" pos="2;4">
+<Act param="r" type="0"/>
+</Fld>
+<Fld label="t" pos="2;5">
+<Act param="t" type="0"/>
+</Fld>
+<Fld label="y" pos="2;6">
+<Act param="y" type="0"/>
+</Fld>
+<Fld label="u" pos="2;7">
+<Act param="u" type="0"/>
+</Fld>
+<Fld label="i" pos="2;8">
+<Act param="i" type="0"/>
+</Fld>
+<Fld label="o" pos="2;9">
+<Act param="o" type="0"/>
+</Fld>
+<Fld label="p" pos="2;10">
+<Act param="p" type="0"/>
+</Fld>
+<Fld label="[" pos="2;11">
+<Sym custom="1" size="542" crc="25015788" fname="KeyboardKeys\curly1.png"/>
+<Act param="[" type="0"/>
+</Fld>
+<Fld label="]" pos="2;12">
+<Sym custom="1" size="543" crc="F4E5244B" fname="KeyboardKeys\curly2.png"/>
+<Act param="]" type="0"/>
+</Fld>
+<Fld pos="2;13" height="2">
+<Sym custom="1" size="527" crc="8F0FCDF9" fname="Edited\back (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;13&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="f" pos="3;4">
+<Act param="f" type="0"/>
+</Fld>
+<Fld label="g" pos="3;5">
+<Act param="g" type="0"/>
+</Fld>
+<Fld label="h" pos="3;6">
+<Act param="h" type="0"/>
+</Fld>
+<Fld label="j" pos="3;7">
+<Act param="j" type="0"/>
+</Fld>
+<Fld label="k" pos="3;8">
+<Act param="k" type="0"/>
+</Fld>
+<Fld label="l" pos="3;9">
+<Act param="l" type="0"/>
+</Fld>
+<Fld label=";" pos="3;10">
+<Sym custom="1" size="386" crc="FF1A766A" fname="KeyboardKeys\semicolon.png"/>
+<Act param=";" type="6"/>
+</Fld>
+<Fld label="," pos="3;11">
+<Sym custom="1" size="443" crc="AAD5708D" fname="KeyboardKeys\speech.png"/>
+<Act param="," type="6"/>
+</Fld>
+<Fld label="\" pos="3;12">
+<Sym custom="1" size="297" crc="F152C4A6" fname="KeyboardKeys\pipe.png"/>
+<Act param="\" type="6"/>
+</Fld>
+<Fld pos="2;0">
+<Sym custom="1" size="487" crc="663B5B76" fname="Edited\right (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;9&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="`" pos="4;1">
+<Sym custom="1" size="445" crc="68D8B217" fname="KeyboardKeys\curly3.png"/>
+<Act param="`" type="6"/>
+</Fld>
+<Fld label="z" pos="4;2">
+<Act param="z" type="6"/>
+</Fld>
+<Fld label="x" pos="4;3">
+<Act param="x" type="6"/>
+</Fld>
+<Fld label="c" pos="4;4">
+<Act param="c" type="0"/>
+</Fld>
+<Fld label="v" pos="4;5">
+<Act param="v" type="6"/>
+</Fld>
+<Fld label="b" pos="4;6">
+<Act param="b" type="0"/>
+</Fld>
+<Fld label="n" pos="4;7">
+<Act param="n" type="0"/>
+</Fld>
+<Fld label="m" pos="4;8">
+<Act param="m" type="6"/>
+</Fld>
+<Fld label="," pos="4;9">
+<Sym custom="1" size="509" crc="DA3B7A2E" fname="KeyboardKeys\lt.png"/>
+<Act param="," type="6"/>
+</Fld>
+<Fld label="." pos="4;10">
+<Sym custom="1" size="496" crc="0B8014A1" fname="KeyboardKeys\gt.png"/>
+<Act param="." type="6"/>
+</Fld>
+<Fld label="/" pos="4;11">
+<Sym custom="1" size="649" crc="6446D865" fname="KeyboardKeys\question.png"/>
+<Act param="/" type="6"/>
+</Fld>
+<Fld pos="4;12">
+<Sym custom="1" size="650" crc="86206770" fname="Edited\up2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;38&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="0;13">
+<Sym custom="1" size="773" crc="C1CE7220" fname="Edited\mouse (Edited).png"/>
+<Act name="LoadPage" param="Mouse_Control"/>
+</Fld>
+<Fld pos="5;3">
+<Sym custom="1" size="2355" crc="8E9D0FB0" fname="KeyboardKeys\cmd.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;4&quot;\&gt;"/>
+</Fld>
+<Fld label="alt" pos="5;2">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld label="ctrl" pos="5;1">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;4" width="5">
+<Act param=" " type="0"/>
+</Fld>
+<Fld pos="5;11">
+<Sym custom="1" size="675" crc="E93F02FB" fname="Edited\left2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;37&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;12">
+<Sym custom="1" size="665" crc="EABB6288" fname="Edited\down2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;40&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;13">
+<Sym custom="1" size="655" crc="BF74922F" fname="Edited\right2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;39&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="Esc">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;27&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F5" pos="0;5">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;116&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="alt" pos="5;10">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld pos="4;13"/>
+<Fld label="F3" pos="0;3">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;115&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;9">
+<Sym custom="1" size="2355" crc="8E9D0FB0" fname="KeyboardKeys\cmd.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;4&quot;\&gt;"/>
+</Fld>
+</Page>
+<Page name="Keyboard" id="07bd5ef0-a3b5-11e2-16a9-06c88c276bd7" rows="6" columns="14" fieldspacing="10" defaultstyle="Key">
+<Background backcolor="C0C0C0" gradient="toptobottom" backcolor2="FFFFFF"/>
+<Fld label="F1" pos="0;1">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;112&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F2" pos="0;2">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;113&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="2" pos="1;2">
+<Sym custom="1" size="1022" crc="90B6BCAA" fname="KeyboardKeys\@.png"/>
+<Act param="2" type="0"/>
+</Fld>
+<Fld label="1" pos="1;1">
+<Sym custom="1" size="373" crc="B256FA19" fname="KeyboardKeys\!.png"/>
+<Act param="1" type="0"/>
+</Fld>
+<Fld label="4" pos="1;4">
+<Sym custom="1" size="793" crc="1F1399CF" fname="KeyboardKeys\$.png"/>
+<Act param="4" type="0"/>
+</Fld>
+<Fld label="3" pos="1;3">
+<Sym custom="1" size="691" crc="EBD77348" fname="KeyboardKeys\£.png"/>
+<Act param="3" type="0"/>
+</Fld>
+<Fld label="caps" pos="3;0">
+<Act name="LoadPage" param="Keyboard_Caps"/>
+</Fld>
+<Fld label="q" style="KeyPlain" pos="2;1">
+<Act param="q" type="6"/>
+</Fld>
+<Fld label="w" style="KeyPlain" pos="2;2">
+<Act param="w" type="0"/>
+</Fld>
+<Fld label="e" style="KeyPlain" pos="2;3">
+<Act param="e" type="0"/>
+</Fld>
+<Fld label="shift" pos="4;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;1&quot;\&gt;"/>
+</Fld>
+<Fld label="a" style="KeyPlain" pos="3;1">
+<Act param="a" type="6"/>
+</Fld>
+<Fld label="s" style="KeyPlain" pos="3;2">
+<Act param="s" type="0"/>
+</Fld>
+<Fld label="d" style="KeyPlain" pos="3;3">
+<Act param="d" type="0"/>
+</Fld>
+<Fld label="F4" pos="0;4">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;115&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="§" pos="1;0">
+<Sym custom="1" size="461" crc="411D4897" fname="KeyboardKeys\plusminus.png"/>
+<Act param="§" type="6"/>
+</Fld>
+<Fld label="F6" pos="0;6">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;117&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F7" pos="0;7">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;118&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F8" pos="0;8">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;119&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F9" pos="0;9">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;120&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F10" pos="0;10">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;121&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F11" pos="0;11">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;122&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F12" pos="0;12">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;123&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="Off" style="Key_Shift" pos="5;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sendonoff&quot;\&gt;&lt;SendOnOff=&quot;0&quot;\&gt;"/>
+<Act name="LoadPage" param="StartPage"/>
+</Fld>
+<Fld label="5" pos="1;5">
+<Sym custom="1" size="906" crc="11CE4F88" fname="KeyboardKeys\percent.png"/>
+<Act param="5" type="0"/>
+</Fld>
+<Fld label="6" pos="1;6">
+<Sym custom="1" size="551" crc="C15CF1C5" fname="KeyboardKeys\^.png"/>
+<Act param="6" type="0"/>
+</Fld>
+<Fld label="7" pos="1;7">
+<Sym custom="1" size="886" crc="7CDD24C5" fname="KeyboardKeys\&amp;.png"/>
+<Act param="7" type="0"/>
+</Fld>
+<Fld label="8" pos="1;8">
+<Sym custom="1" size="547" crc="9F5DBD84" fname="KeyboardKeys\star.png"/>
+<Act param="8" type="0"/>
+</Fld>
+<Fld label="9" pos="1;9">
+<Sym custom="1" size="447" crc="FB84FC4F" fname="KeyboardKeys\(.png"/>
+<Act param="9" type="0"/>
+</Fld>
+<Fld label="0" pos="1;10">
+<Sym custom="1" size="447" crc="4828181E" fname="KeyboardKeys\).png"/>
+<Act param="0" type="0"/>
+</Fld>
+<Fld label="-" pos="1;11">
+<Sym custom="1" size="373" crc="B256FA19" fname="KeyboardKeys\!.png"/>
+<Act param="-" type="0"/>
+</Fld>
+<Fld label="=" pos="1;12">
+<Sym custom="1" size="456" crc="1385ADFD" fname="KeyboardKeys\plus.png"/>
+<Act param="+" type="0"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="1;13">
+<Sym custom="1" size="488" crc="7A6A566E" fname="Edited\left (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;46&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="r" style="KeyPlain" pos="2;4">
+<Act param="r" type="0"/>
+</Fld>
+<Fld label="t" style="KeyPlain" pos="2;5">
+<Act param="t" type="0"/>
+</Fld>
+<Fld label="y" style="KeyPlain" pos="2;6">
+<Act param="y" type="0"/>
+</Fld>
+<Fld label="u" style="KeyPlain" pos="2;7">
+<Act param="u" type="0"/>
+</Fld>
+<Fld label="i" style="KeyPlain" pos="2;8">
+<Act param="i" type="0"/>
+</Fld>
+<Fld label="o" style="KeyPlain" pos="2;9">
+<Act param="o" type="0"/>
+</Fld>
+<Fld label="p" style="KeyPlain" pos="2;10">
+<Act param="p" type="0"/>
+</Fld>
+<Fld label="[" pos="2;11">
+<Sym custom="1" size="542" crc="25015788" fname="KeyboardKeys\curly1.png"/>
+<Act param="[" type="0"/>
+</Fld>
+<Fld label="]" pos="2;12">
+<Sym custom="1" size="543" crc="F4E5244B" fname="KeyboardKeys\curly2.png"/>
+<Act param="]" type="0"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="2;13" height="2">
+<Sym custom="1" size="527" crc="8F0FCDF9" fname="Edited\back (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;13&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="f" style="KeyPlain" pos="3;4">
+<Act param="f" type="0"/>
+</Fld>
+<Fld label="g" style="KeyPlain" pos="3;5">
+<Act param="g" type="0"/>
+</Fld>
+<Fld label="h" style="KeyPlain" pos="3;6">
+<Act param="h" type="0"/>
+</Fld>
+<Fld label="j" style="KeyPlain" pos="3;7">
+<Act param="j" type="0"/>
+</Fld>
+<Fld label="k" style="KeyPlain" pos="3;8">
+<Act param="k" type="0"/>
+</Fld>
+<Fld label="l" style="KeyPlain" pos="3;9">
+<Act param="l" type="0"/>
+</Fld>
+<Fld label=";" pos="3;10">
+<Sym custom="1" size="386" crc="FF1A766A" fname="KeyboardKeys\semicolon.png"/>
+<Act param=";" type="6"/>
+</Fld>
+<Fld label="," pos="3;11">
+<Sym custom="1" size="443" crc="AAD5708D" fname="KeyboardKeys\speech.png"/>
+<Act param="," type="6"/>
+</Fld>
+<Fld label="\" pos="3;12">
+<Sym custom="1" size="297" crc="F152C4A6" fname="KeyboardKeys\pipe.png"/>
+<Act param="\" type="6"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="2;0">
+<Sym custom="1" size="487" crc="663B5B76" fname="Edited\right (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;9&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="`" pos="4;1">
+<Sym custom="1" size="445" crc="68D8B217" fname="KeyboardKeys\curly3.png"/>
+<Act param="`" type="6"/>
+</Fld>
+<Fld label="z" style="KeyPlain" pos="4;2">
+<Act param="z" type="6"/>
+</Fld>
+<Fld label="x" style="KeyPlain" pos="4;3">
+<Act param="x" type="6"/>
+</Fld>
+<Fld label="c" style="KeyPlain" pos="4;4">
+<Act param="c" type="0"/>
+</Fld>
+<Fld label="v" style="KeyPlain" pos="4;5">
+<Act param="v" type="6"/>
+</Fld>
+<Fld label="b" style="KeyPlain" pos="4;6">
+<Act param="b" type="0"/>
+</Fld>
+<Fld label="n" style="KeyPlain" pos="4;7">
+<Act param="n" type="0"/>
+</Fld>
+<Fld label="m" style="KeyPlain" pos="4;8">
+<Act param="m" type="6"/>
+</Fld>
+<Fld label="," pos="4;9">
+<Sym custom="1" size="509" crc="DA3B7A2E" fname="KeyboardKeys\lt.png"/>
+<Act param="," type="6"/>
+</Fld>
+<Fld label="." pos="4;10">
+<Sym custom="1" size="496" crc="0B8014A1" fname="KeyboardKeys\gt.png"/>
+<Act param="." type="6"/>
+</Fld>
+<Fld label="/" pos="4;11">
+<Sym custom="1" size="649" crc="6446D865" fname="KeyboardKeys\question.png"/>
+<Act param="/" type="6"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="4;12">
+<Sym custom="1" size="650" crc="86206770" fname="Edited\up2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;38&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImageOnly" pos="0;13">
+<Sym custom="1" size="773" crc="C1CE7220" fname="Edited\mouse (Edited).png"/>
+<Act name="LoadPage" param="Mouse_Control"/>
+</Fld>
+<Fld style="KeyImageOnly" pos="5;3">
+<Sym custom="1" size="2355" crc="8E9D0FB0" fname="KeyboardKeys\cmd.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;4&quot;\&gt;"/>
+</Fld>
+<Fld label="alt" pos="5;2">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld label="ctrl" pos="5;1">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;4" width="5">
+<Act param=" " type="0"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="5;11">
+<Sym custom="1" size="675" crc="E93F02FB" fname="Edited\left2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;37&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="5;12">
+<Sym custom="1" size="665" crc="EABB6288" fname="Edited\down2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;40&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="5;13">
+<Sym custom="1" size="655" crc="BF74922F" fname="Edited\right2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;39&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="Esc">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;27&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F5" pos="0;5">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;116&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="alt" pos="5;10">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld pos="4;13"/>
+<Fld label="F3" pos="0;3">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;115&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImageOnly" pos="5;9">
+<Sym custom="1" size="2355" crc="8E9D0FB0" fname="KeyboardKeys\cmd.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;4&quot;\&gt;"/>
+</Fld>
+</Page>
+<Page name="Keyboard_Caps" id="93c21c20-a3b9-11e2-3747-06e658b16bc3" rows="6" columns="14" fieldspacing="10" defaultstyle="Key">
+<Background backcolor="C0C0C0" gradient="toptobottom" backcolor2="FFFFFF"/>
+<Fld label="F1" pos="0;1">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;112&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F2" pos="0;2">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;113&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="2" pos="1;2">
+<Sym custom="1" size="1022" crc="90B6BCAA" fname="KeyboardKeys\@.png"/>
+<Act param="2" type="0"/>
+</Fld>
+<Fld label="1" pos="1;1">
+<Sym custom="1" size="373" crc="B256FA19" fname="KeyboardKeys\!.png"/>
+<Act param="1" type="6"/>
+</Fld>
+<Fld label="4" pos="1;4">
+<Sym custom="1" size="793" crc="1F1399CF" fname="KeyboardKeys\$.png"/>
+<Act param="4" type="0"/>
+</Fld>
+<Fld label="3" pos="1;3">
+<Sym custom="1" size="691" crc="EBD77348" fname="KeyboardKeys\£.png"/>
+<Act param="3" type="0"/>
+</Fld>
+<Fld label="caps" style="Key_Shift" pos="3;0">
+<Act name="LoadPage" param="Keyboard"/>
+</Fld>
+<Fld label="Q" style="KeyPlain" pos="2;1">
+<Act param="q" type="6"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;NormalKey=&quot;q&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="W" style="KeyPlain" pos="2;2">
+<Act param="w" type="6"/>
+</Fld>
+<Fld label="E" style="KeyPlain" pos="2;3"/>
+<Fld label="shift" pos="4;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;1&quot;\&gt;"/>
+</Fld>
+<Fld label="A" style="KeyPlain" pos="3;1">
+<Act param="a" type="6"/>
+</Fld>
+<Fld label="S" style="KeyPlain" pos="3;2"/>
+<Fld label="D" style="KeyPlain" pos="3;3"/>
+<Fld label="F4" pos="0;4">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;115&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="§" pos="1;0">
+<Sym custom="1" size="461" crc="411D4897" fname="KeyboardKeys\plusminus.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;NormalKey=&quot;§&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F6" pos="0;6">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;117&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F7" pos="0;7">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;118&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F8" pos="0;8">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;119&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F9" pos="0;9">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;120&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F10" pos="0;10">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;121&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F11" pos="0;11">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;122&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F12" pos="0;12">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;123&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="Off" style="Key_Shift" pos="5;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sendonoff&quot;\&gt;&lt;SendOnOff=&quot;0&quot;\&gt;"/>
+<Act name="LoadPage" param="StartPage"/>
+</Fld>
+<Fld label="5" pos="1;5">
+<Sym custom="1" size="906" crc="11CE4F88" fname="KeyboardKeys\percent.png"/>
+<Act param="5" type="0"/>
+</Fld>
+<Fld label="6" pos="1;6">
+<Sym custom="1" size="551" crc="C15CF1C5" fname="KeyboardKeys\^.png"/>
+<Act param="6" type="0"/>
+</Fld>
+<Fld label="7" pos="1;7">
+<Sym custom="1" size="886" crc="7CDD24C5" fname="KeyboardKeys\&amp;.png"/>
+<Act param="7" type="0"/>
+</Fld>
+<Fld label="8" pos="1;8">
+<Sym custom="1" size="547" crc="9F5DBD84" fname="KeyboardKeys\star.png"/>
+<Act param="8" type="0"/>
+</Fld>
+<Fld label="9" pos="1;9">
+<Sym custom="1" size="447" crc="FB84FC4F" fname="KeyboardKeys\(.png"/>
+<Act param="9" type="0"/>
+</Fld>
+<Fld label="0" pos="1;10">
+<Sym custom="1" size="447" crc="4828181E" fname="KeyboardKeys\).png"/>
+<Act param="0" type="0"/>
+</Fld>
+<Fld label="-" pos="1;11">
+<Sym custom="1" size="373" crc="B256FA19" fname="KeyboardKeys\!.png"/>
+<Act param="-" type="0"/>
+</Fld>
+<Fld label="=" pos="1;12">
+<Sym custom="1" size="456" crc="1385ADFD" fname="KeyboardKeys\plus.png"/>
+<Act param="=" type="0"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="1;13">
+<Sym custom="1" size="488" crc="7A6A566E" fname="Edited\left (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;46&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="R" style="KeyPlain" pos="2;4"/>
+<Fld label="T" style="KeyPlain" pos="2;5"/>
+<Fld label="Y" style="KeyPlain" pos="2;6"/>
+<Fld label="U" style="KeyPlain" pos="2;7"/>
+<Fld label="I" style="KeyPlain" pos="2;8"/>
+<Fld label="O" style="KeyPlain" pos="2;9"/>
+<Fld label="P" style="KeyPlain" pos="2;10"/>
+<Fld label="[" pos="2;11">
+<Sym custom="1" size="542" crc="25015788" fname="KeyboardKeys\curly1.png"/>
+<Act param="[" type="0"/>
+</Fld>
+<Fld label="]" pos="2;12">
+<Sym custom="1" size="543" crc="F4E5244B" fname="KeyboardKeys\curly2.png"/>
+<Act param="]" type="0"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="2;13" height="2">
+<Sym custom="1" size="527" crc="8F0FCDF9" fname="Edited\back (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;13&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F" style="KeyPlain" pos="3;4"/>
+<Fld label="G" style="KeyPlain" pos="3;5"/>
+<Fld label="H" style="KeyPlain" pos="3;6"/>
+<Fld label="J" style="KeyPlain" pos="3;7"/>
+<Fld label="K" style="KeyPlain" pos="3;8"/>
+<Fld label="L" style="KeyPlain" pos="3;9"/>
+<Fld label=";" pos="3;10">
+<Sym custom="1" size="386" crc="FF1A766A" fname="KeyboardKeys\semicolon.png"/>
+<Act param=";" type="6"/>
+</Fld>
+<Fld label="," pos="3;11">
+<Sym custom="1" size="443" crc="AAD5708D" fname="KeyboardKeys\speech.png"/>
+<Act param="," type="6"/>
+</Fld>
+<Fld label="\" pos="3;12">
+<Sym custom="1" size="297" crc="F152C4A6" fname="KeyboardKeys\pipe.png"/>
+<Act param="\" type="6"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="2;0">
+<Sym custom="1" size="487" crc="663B5B76" fname="Edited\right (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;9&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="`" pos="4;1">
+<Sym custom="1" size="445" crc="68D8B217" fname="KeyboardKeys\curly3.png"/>
+<Act param="`" type="6"/>
+</Fld>
+<Fld label="Z" style="KeyPlain" pos="4;2">
+<Act param="z" type="6"/>
+</Fld>
+<Fld label="X" style="KeyPlain" pos="4;3">
+<Act param="x" type="6"/>
+</Fld>
+<Fld label="C" style="KeyPlain" pos="4;4">
+<Act param="c" type="0"/>
+</Fld>
+<Fld label="V" style="KeyPlain" pos="4;5">
+<Act param="v" type="6"/>
+</Fld>
+<Fld label="B" style="KeyPlain" pos="4;6">
+<Act param="b" type="0"/>
+</Fld>
+<Fld label="N" style="KeyPlain" pos="4;7">
+<Act param="n" type="0"/>
+</Fld>
+<Fld label="M" style="KeyPlain" pos="4;8">
+<Act param="m" type="6"/>
+</Fld>
+<Fld label="," pos="4;9">
+<Sym custom="1" size="509" crc="DA3B7A2E" fname="KeyboardKeys\lt.png"/>
+<Act param="," type="6"/>
+</Fld>
+<Fld label="." pos="4;10">
+<Sym custom="1" size="496" crc="0B8014A1" fname="KeyboardKeys\gt.png"/>
+<Act param="." type="6"/>
+</Fld>
+<Fld label="/" pos="4;11">
+<Sym custom="1" size="649" crc="6446D865" fname="KeyboardKeys\question.png"/>
+<Act param="/" type="6"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="4;12">
+<Sym custom="1" size="650" crc="86206770" fname="Edited\up2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;38&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImageOnly" pos="0;13">
+<Sym custom="1" size="773" crc="C1CE7220" fname="Edited\mouse (Edited).png"/>
+<Act name="LoadPage" param="Mouse_Control"/>
+</Fld>
+<Fld style="KeyImageOnly" pos="5;3">
+<Sym custom="1" size="2355" crc="8E9D0FB0" fname="KeyboardKeys\cmd.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;4&quot;\&gt;"/>
+</Fld>
+<Fld label="alt" pos="5;2">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld label="ctrl" pos="5;1">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;4" width="5"/>
+<Fld style="KeyImgOnlySmall" pos="5;11">
+<Sym custom="1" size="675" crc="E93F02FB" fname="Edited\left2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;37&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="5;12">
+<Sym custom="1" size="665" crc="EABB6288" fname="Edited\down2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;40&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="5;13">
+<Sym custom="1" size="655" crc="BF74922F" fname="Edited\right2 (Edited).png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;39&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="Esc">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;27&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="F3" pos="0;5">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;114&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld label="alt" pos="5;10">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld pos="4;13"/>
+<Fld label="F3" pos="0;3">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;115&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImageOnly" pos="5;9">
+<Sym custom="1" size="2355" crc="8E9D0FB0" fname="KeyboardKeys\cmd.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sticky_key&quot;\&gt;&lt;Modifier=&quot;4&quot;\&gt;"/>
+</Fld>
+</Page>
+<Page name="Mouse_Control" id="b206b450-a3b6-11e2-7fe5-06d375ea4898" rows="6" columns="14" fieldspacing="10" defaultstyle="Key">
+<Background backcolor="C0C0C0" gradient="toptobottom" backcolor2="FFFFFF"/>
+<Fld pos="1;11"/>
+<Fld label="Off" style="Key_Shift" pos="5;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;sendonoff&quot;\&gt;&lt;SendOnOff=&quot;0&quot;\&gt;"/>
+<Act name="LoadPage" param="StartPage"/>
+</Fld>
+<Fld pos="0;13"/>
+<Fld pos="2;13" height="2"/>
+<Fld pos="4;12"/>
+<Fld style="KeyImgOnlySmall" pos="1;13">
+<Sym custom="1" size="11609" crc="682B8C6B" fname="SystemIcons\1365886308_Redo.png"/>
+<Act name="LoadPage" param="Keyboard"/>
+</Fld>
+<Fld pos="5;12"/>
+<Fld pos="4;13"/>
+<Fld/>
+<Fld pos="0;1"/>
+<Fld pos="0;2"/>
+<Fld pos="0;3"/>
+<Fld pos="1;6"/>
+<Fld pos="4;9"/>
+<Fld pos="2;2"/>
+<Fld pos="2;6"/>
+<Fld pos="1;0"/>
+<Fld pos="4;8"/>
+<Fld pos="3;9"/>
+<Fld pos="5;8"/>
+<Fld pos="1;1"/>
+<Fld pos="1;2"/>
+<Fld pos="3;6"/>
+<Fld pos="4;6"/>
+<Fld pos="4;2"/>
+<Fld pos="2;1"/>
+<Fld label="undo" style="KeyPlain" pos="2;0">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;NormalKey=&quot;z&quot;\&gt;&lt;Modifier=&quot;8&quot;\&gt;"/>
+</Fld>
+<Fld pos="5;1"/>
+<Fld pos="5;2"/>
+<Fld pos="5;3"/>
+<Fld pos="3;8"/>
+<Fld pos="4;11"/>
+<Fld pos="3;12"/>
+<Fld pos="3;11"/>
+<Fld pos="4;7"/>
+<Fld pos="2;7"/>
+<Fld pos="2;9"/>
+<Fld pos="2;12"/>
+<Fld pos="1;9"/>
+<Fld label="spotlight" pos="1;12">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;32&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld pos="1;8"/>
+<Fld pos="0;7"/>
+<Fld pos="0;11"/>
+<Fld pos="0;12"/>
+<Fld pos="5;11"/>
+<Fld pos="5;13"/>
+<Fld pos="5;10"/>
+<Fld pos="5;9"/>
+<Fld pos="5;4"/>
+<Fld pos="5;5"/>
+<Fld pos="5;6"/>
+<Fld pos="5;7"/>
+<Fld pos="2;8"/>
+<Fld label="Pg Up" pos="1;7">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;33&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="2;11">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;35&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="2;10"/>
+<Fld label="Pg Dwn" pos="3;7">
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;34&quot;\&gt;&lt;Modifier=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="1;10"/>
+<Fld label="line" pos="4;1">
+<Sym custom="1" size="1678" crc="4EA16B7A" fname="SystemIcons\1365886026_edit-select-all.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;40&quot;\&gt;&lt;Modifier=&quot;1&quot;\&gt;"/>
+</Fld>
+<Fld label="- word" pos="4;0">
+<Sym custom="1" size="1678" crc="4EA16B7A" fname="SystemIcons\1365886026_edit-select-all.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;SpecialKey=&quot;39&quot;\&gt;&lt;Modifier=&quot;3&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="3;0">
+<Sym custom="1" size="3687" crc="DF607E60" fname="SystemIcons\1365885973_Copy.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;NormalKey=&quot;c&quot;\&gt;&lt;Modifier=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="3;1">
+<Sym custom="1" size="11422" crc="34A2B5F0" fname="SystemIcons\1365886105_Cut.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;NormalKey=&quot;x&quot;\&gt;&lt;Modifier=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld style="KeyImgOnlySmall" pos="3;2">
+<Sym custom="1" size="6017" crc="EDF5E665" fname="SystemIcons\1365885995_Paste.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;send_key&quot;\&gt;&lt;NormalKey=&quot;v&quot;\&gt;&lt;Modifier=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld pos="0;4"/>
+<Fld pos="0;6"/>
+<Fld pos="0;5"/>
+<Fld style="MouseKeys" pos="1;4">
+<Sym custom="1" size="412" crc="11296F7F" fname="Functions\up2.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;0&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="1;5">
+<Sym custom="1" size="412" crc="789D062A" fname="Functions\up_right.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;0&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;270&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="2;3">
+<Sym custom="1" size="412" crc="127CC921" fname="Functions\left2.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;90&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="3;3">
+<Sym custom="1" size="412" crc="42769640" fname="Functions\down_left.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;90&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;180&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="2;5">
+<Sym custom="1" size="412" crc="81D44C3D" fname="Functions\right2.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;270&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="3;4">
+<Sym custom="1" size="412" crc="EF648664" fname="Functions\down2.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;180&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="3;5">
+<Sym custom="1" size="412" crc="E0F82C14" fname="Functions\down_right.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;180&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;270&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="2;4">
+<Sym custom="1" size="824" crc="E3A25CBD" fname="Functions\mouse_leftclick.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;click&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;90&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="4;3">
+<Sym custom="1" size="1364" crc="A49F1CB3" fname="Functions\mouse_doubleclick.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;click&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;90&quot;\&gt;&lt;Click=&quot;1&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="4;4">
+<Sym custom="1" size="1200" crc="EC312BF0" fname="Functions\mouse_drag.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;click&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;90&quot;\&gt;&lt;Click=&quot;2&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="4;5">
+<Sym custom="1" size="816" crc="04E88267" fname="Functions\mouse_rightclick.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;click&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;270&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld style="MouseKeys" pos="1;3">
+<Sym custom="1" size="412" crc="3D587C4C" fname="Functions\up_left.emf"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;0&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;mouse&quot;\&gt;&lt;SubCommandId=&quot;change_location&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;90&quot;\&gt;&lt;Click=&quot;0&quot;\&gt;"/>
+</Fld>
+<Fld pos="3;10"/>
+<Fld pos="4;10"/>
+<Fld label="Word" pos="0;8">
+<Sym custom="1" size="42080" crc="F1D12D1B" fname="Functions\Word.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;window_control&quot;\&gt;&lt;SubCommandId=&quot;select_next_app&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;0&quot;\&gt;&lt;GotoCorner=&quot;0&quot;\&gt;&lt;Text=&quot;Microsoft Word&quot;\&gt;"/>
+</Fld>
+<Fld label="outlook" pos="0;9">
+<Sym custom="1" size="41263" crc="302F48EB" fname="Functions\Outlook.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;window_control&quot;\&gt;&lt;SubCommandId=&quot;select_next_app&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;0&quot;\&gt;&lt;GotoCorner=&quot;0&quot;\&gt;&lt;Text=&quot;Mail&quot;\&gt;"/>
+</Fld>
+<Fld label="Safari" pos="0;10">
+<Sym custom="1" size="140766" crc="47932A17" fname="Functions\Internet explorer.png"/>
+<Act name="PlugIn" param="{e7ca10ca-4f8d-47ed-8902-178849c7a1d5}&lt;Command=&quot;window_control&quot;\&gt;&lt;SubCommandId=&quot;select_next_app&quot;\&gt;&lt;Value=&quot;100&quot;\&gt;&lt;Direction=&quot;0&quot;\&gt;&lt;GotoCorner=&quot;0&quot;\&gt;&lt;Text=&quot;Safari&quot;\&gt;"/>
+</Fld>
+</Page>
+</Pages>
+<Grammar version="1.0.0.1" lang="9" base="0">
+<Verbs/>
+<Nouns/>
+<Adjectives/>
+</Grammar>
+</Document>
