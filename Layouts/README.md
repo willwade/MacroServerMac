@@ -5,8 +5,8 @@ Find here some example MindExpress pages.
 
 ##Download##
 
-* The keyboard\_mac.xml file - but note you will miss the images from this page unless you have downloaded it already. It's on here to keep revisioning easier. 
-* The [keyboard_mac.jmm] file(https://s3-eu-west-1.amazonaws.com/app-macro/keyboard_mac.jmm). This is the one you will want. 
+* The [keyboard\_mac.xml](keyboard_mac.xml) file - but note you will miss the images from this page unless you have downloaded it already. It's on here to keep revisioning easier. 
+* The [keyboard_mac.jmm file](https://s3-eu-west-1.amazonaws.com/app-macro/keyboard_mac.jmm). This is the one you will want. 
 
 NB: You will need the font ["VAG Rounded Light"](http://www.fonts101.com/fonts/view/Uncategorized/39723/VAGRoundedLightSSi) for this package to look how it was meant to!
 
