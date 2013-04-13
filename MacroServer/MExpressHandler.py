@@ -70,16 +70,16 @@ class MExpressHandler(object):
             cmdappend += ' using {'
             for mods in self.meowi.sticky.iterkeys():
                 if (self.meowi.sticky[mods]):
-                    cmdappend += mods+' , '
+                    cmdappend += mods+' down, '
             if (self.data['modifier'] == '1'):
-                cmdappend += 'shift'+' , '
+                cmdappend += 'shift down, '
             if (self.data['modifier'] == '2'):
-                cmdappend += 'control'+' , '
+                cmdappend += 'control down, '
             if (self.data['modifier'] == '3'):
-                cmdappend += 'alt'+' , '   
+                cmdappend += 'option down, '   
             if (self.data['modifier'] == '4'):
-                cmdappend += 'command'+' , '
-            cmdappend += ' down}'
+                cmdappend += 'command down, '
+            cmdappend = cmdappend[:-len(', ')]+'}'
                                   
         # Now do something with the normal/specialkey 
         if (self.data.has_key('normalkey')):
@@ -106,8 +106,8 @@ class MExpressHandler(object):
                 self.meowi.sticky_toggle('control')
                 logging.debug('ctrl set')
             elif (self.data['modifier'] == '3'):
-                self.meowi.sticky_toggle('alt')
-                logging.debug('alt set')
+                self.meowi.sticky_toggle('option')
+                logging.debug('option set')
             elif (self.data['modifier'] == '4'):
                 self.meowi.sticky_toggle('command')
                 logging.debug('cmd set')
