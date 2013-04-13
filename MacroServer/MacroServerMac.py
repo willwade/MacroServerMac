@@ -60,7 +60,7 @@ class MEUIState(object):
         self.sticky = dict()
         self.sticky['shift'] = False
         self.sticky['control'] = False
-        self.sticky['alt'] = False
+        self.sticky['option'] = False
         self.sticky['command'] = False
         self.leftdrag = False
     
