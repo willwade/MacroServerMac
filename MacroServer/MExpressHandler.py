@@ -66,28 +66,32 @@ class MExpressHandler(object):
         #add in the modifier key. 
         # this may not be correct if two modifier keys set
         cmdappend = ''
-        if(self.data.has_key('modifier') or self.meowi.sticky['set']):
-            if (self.data['modifier'] == '1' or self.meowi.sticky['shift']):
-                cmdappend = ' using {shift down}'
-            elif (self.data['modifier'] == '2' or self.meowi.sticky['control']):
-                cmdappend = ' using {control}'
-            elif (self.data['modifier'] == '3' or self.meowi.sticky['alt']):
-                cmdappend = ' using {alt}'        
-            elif (self.data['modifier'] == '4' or self.meowi.sticky['cmd']):
-                cmdappend = ' using {command}'                
-                  
+        if((int(self.data['modifier'])>0) or (any(self.meowi.sticky.itervalues()))):
+            cmdappend += ' using {'
+            for mods in self.meowi.sticky.iterkeys():
+                if (self.meowi.sticky[mods]):
+                    cmdappend += mods+' , '
+            if (self.data['modifier'] == '1'):
+                cmdappend += 'shift'+' , '
+            if (self.data['modifier'] == '2'):
+                cmdappend += 'control'+' , '
+            if (self.data['modifier'] == '3'):
+                cmdappend += 'alt'+' , '   
+            if (self.data['modifier'] == '4'):
+                cmdappend += 'command'+' , '
+            cmdappend += ' down}'
+                                  
         # Now do something with the normal/specialkey 
-        # NB: when running this in the terminal note it will press the key twice seemingly - its not - it just echos the return from the command
         if (self.data.has_key('normalkey')):
-            logging.debug('normal send_key')
+            logging.debug('normal send_key:'+self.data['normalkey'])
             cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+self.data['normalkey']+"\""+cmdappend+"'"
             os.system(cmd)
         elif (self.data.has_key('specialkey')):
-            logging.debug('special:'+self.data['specialkey'])
+            logging.debug('special send_key:'+self.data['specialkey'])
             k = AppleKeyboardEvents()
             specialcode = k.convertWintoMacCode(self.data['specialkey'])
-            logging.debug('converted to:'+specialcode)
-            cmd = "osascript -e 'tell application \"System Events\" to key code \""+specialcode+"\""+cmdappend+"'"
+            logging.debug('converted to:'+str(specialcode))
+            cmd = "osascript -e 'tell application \"System Events\" to key code "+specialcode+cmdappend+"'"
             os.system(cmd)
         
         logging.debug('system call:'+cmd)
@@ -97,12 +101,16 @@ class MExpressHandler(object):
         if(self.data.has_key('modifier')):
             if (self.data['modifier'] == '1'):
                 self.meowi.sticky_toggle('shift')
+                logging.debug('shift set')
             elif (self.data['modifier'] == '2'):
                 self.meowi.sticky_toggle('control')
+                logging.debug('ctrl set')
             elif (self.data['modifier'] == '3'):
                 self.meowi.sticky_toggle('alt')
+                logging.debug('alt set')
             elif (self.data['modifier'] == '4'):
-                self.meowi.sticky_toggle('cmd')
+                self.meowi.sticky_toggle('command')
+                logging.debug('cmd set')
         return True
         
     def control_pause(self):

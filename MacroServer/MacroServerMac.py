@@ -16,11 +16,10 @@ from MExpressHandler import MExpressHandler
 class MEUIState(object):
     def  __init__(self):
         self.sticky = dict()
-        self.sticky['set'] = False
         self.sticky['shift'] = False
         self.sticky['control'] = False
         self.sticky['alt'] = False
-        self.sticky['cmd'] = False
+        self.sticky['command'] = False
         self.leftdrag = False
     
     def sticky_toggle(self,stickyKey):
