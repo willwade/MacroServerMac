@@ -25,7 +25,9 @@ NB: You will need the font ["VAG Rounded Light"](http://www.fonts101.com/fonts/v
 
 ##Notes:##
 
-* You will need to keep track of whether the shift/control/command/alt(opt) key has been selected as there is no way of showing this on the MindExpress keyboard.
+* You will need to keep track of whether the shift/control/command/alt(opt) key has been selected as there is no way of showing this on the MindExpress keyboard. This is a little easier if you run the server with the Growl notifier set to True e.g.
+    
+        python MacroServerMac.py --usegrowl True
 
 
 !['Screenshot of the first keyboard made'](ScreenShotMacMindExpress1.png)
