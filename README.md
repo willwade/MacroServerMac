@@ -21,7 +21,9 @@ NB: at present it won't allow multiple IP address' despite it saying so!
 
 ###Dependencies###
 
-If you want fancy notifications of which modifier key has been set by MindExpress install the Growl Notfication plug-in. Don't fret its easy - and the results are neat. [See the information here for installation](https://github.com/kfdm/gntp#installation).
+If you want fancy notifications of which modifier key has been set by MindExpress install the Growl Notfication plug-in. Don't fret its easy - and the results are neat. [See the information here for installation](https://github.com/kfdm/gntp#installation). Once installed you will probably want to run it like this:
+
+    python MacroServerMac.py --loglevel DEBUG --usegrowl True
 
 ##Client##
 
