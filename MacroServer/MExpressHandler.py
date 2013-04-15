@@ -182,7 +182,7 @@ irection]><GotoCorner=[gtc]>
                 # Up
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, up')
-                    m.mousedrag(pos.x,pos.y-val)                      
+                    m.mousefulldrag(pos.x,pos.y,pos.x,pos.y-val)                      
                 else:
                     logging.debug('up')
                     m.mousemove(pos.x,pos.y-val)      
@@ -190,7 +190,7 @@ irection]><GotoCorner=[gtc]>
                 # Left
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, left')
-                    m.mousedrag(pos.x-val,pos.y)
+                    m.mousefulldrag(pos.x,pos.y,pos.x-val,pos.y)
                 else:   
                     logging.debug('left')
                     m.mousemove(pos.x-val,pos.y)      
@@ -198,7 +198,7 @@ irection]><GotoCorner=[gtc]>
                 # Right
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, right')
-                    m.mousedrag(pos.x+val,pos.y)                 
+                    m.mousefulldrag(pos.x,pos.y,pos.x+val,pos.y)                
                 else:
                     logging.debug('right')
                     m.mousemove(pos.x+val,pos.y) 
@@ -206,7 +206,7 @@ irection]><GotoCorner=[gtc]>
                 # Down
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, down')
-                    m.mousedrag(pos.x,pos.y+val)      
+                    m.mousefulldrag(pos.x,pos.y,pos.x,pos.y+val)      
                 else:
                     logging.debug('down')
                     m.mousemove(pos.x,pos.y+val)      

@@ -40,6 +40,11 @@ class AppleMouseEvents():
         self.mouseEvent(kCGEventRightMouseDown, posx,posy);
         self.mouseEvent(kCGEventRightMouseUp, posx,posy);
     
+    def mousefulldrag(self,posx,posy,toposx,toposy):
+        self.mouseclickdn(posx,posy);
+        self.mousedrag(toposx,toposy);
+        self.mouseclickup(toposx,toposy);
+    
     def mousesingleclick(self,posx,posy):
         self.mouseclickdn(posx,posy)
         self.mouseclickup(posx,posy)
