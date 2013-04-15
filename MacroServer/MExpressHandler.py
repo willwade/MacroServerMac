@@ -63,7 +63,12 @@ class MExpressHandler(object):
         logging.debug('About to call..'+func_name)      
         func = getattr(self,func_name)
         return func()
-                
+    
+    def replace_all(self, text, dic):
+      for i, j in dic.iteritems():
+        text = text.replace(i, j)
+      return text
+       
     def control_send_key(self):
         #add in the modifier key. 
         # this may not be correct if two modifier keys set
@@ -86,7 +91,9 @@ class MExpressHandler(object):
         # Now do something with the normal/specialkey 
         if (self.data.has_key('normalkey')):
             logging.debug('normal send_key:'+self.data['normalkey'])
-            cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+self.data['normalkey']+"\""+cmdappend+"'"
+            escape = {'\\':'\\\\', '"':'\"',"'":"\'"}
+            dataforos = self.replace_all(self.data['normalkey'],escape)
+            cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+dataforos+"\""+cmdappend+"'"
             os.system(cmd)
         elif (self.data.has_key('specialkey')):
             logging.debug('special send_key:'+self.data['specialkey'])

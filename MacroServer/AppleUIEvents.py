@@ -6,6 +6,7 @@ import time
 from Quartz.CoreGraphics import *	# imports all of the top-level symbols in the module
 # for the keycodes
 import csv
+import os
 
 class AppleMouseEvents():
     """
