@@ -95,6 +95,8 @@ class MExpressHandler(object):
             dataforos = self.replace_all(self.data['normalkey'],escape)
             cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+dataforos+"\""+cmdappend+"'"
             os.system(cmd)
+            logging.debug('system call:'+cmd)
+            logging.debug('sticky:'+str(self.meowi.sticky))
         elif (self.data.has_key('specialkey')):
             logging.debug('special send_key:'+self.data['specialkey'])
             k = AppleKeyboardEvents()
