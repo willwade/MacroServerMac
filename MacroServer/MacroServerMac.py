@@ -70,6 +70,12 @@ class MEUIState(object):
             self.sticky[stickyKey] = False
         else:
             self.sticky[stickyKey] = True
+    
+    def drag_toggle(self):
+        if (self.leftdrag):
+            self.leftdrag = False
+        else:
+            self.leftdrag = True
 
 class METCPServer(SocketServer.TCPServer):
     def __init__(self, server_address, RequestHandlerClass, bind_and_activate=True, usegrowl=True):

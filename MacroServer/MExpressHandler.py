@@ -99,12 +99,14 @@ class MExpressHandler(object):
             logging.debug('special send_key:'+self.data['specialkey'])
             k = AppleKeyboardEvents()
             specialcode = k.convertWintoMacCode(self.data['specialkey'])
-            logging.debug('converted to:'+str(specialcode))
-            cmd = "osascript -e 'tell application \"System Events\" to key code "+specialcode+cmdappend+"'"
-            os.system(cmd)
-        
-        logging.debug('system call:'+cmd)
-        logging.debug('sticky:'+str(self.meowi.sticky))
+            if specialcode == None:
+                logging.warning('There is no matching keycode for:'+self.data['specialkey'])
+            else:
+                logging.debug('converted to:'+str(specialcode))
+                cmd = "osascript -e 'tell application \"System Events\" to key code "+specialcode+cmdappend+"'"
+                os.system(cmd)        
+                logging.debug('system call:'+cmd)
+                logging.debug('sticky:'+str(self.meowi.sticky))
         
     def control_sticky_key(self):
         if(self.data.has_key('modifier')):
@@ -220,8 +222,9 @@ irection]><GotoCorner=[gtc]>
                  m.mouserclick(pos.x,pos.y)
             elif(self.data['click']=='2' and self.data['direction']=='90'):
                 # not sure how this works
-                 logging.debug('drag lock on')
-                 self.meowi.leftdrag = True 
+                self.meowi.drag_toggle()
+                self.notifier.sendMessage('leftdrag',self.meowi.leftdrag)
+                logging.debug('drag lock '+str(self.meowi.leftdrag))
         return True
     
     
