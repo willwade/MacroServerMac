@@ -14,13 +14,14 @@ Runs a Mind Express Control Server.
 
 optional arguments:
   -h, --help            show this help message and exit
-  --host=HOST
-                        Allow from one or several ip-address. [default: 0.0.0.0]
+  -v, --version         show the version number of this script and exit
+  --host=HOST           Allow from one or several ip-address. [default: 0.0.0.0]
   --port=PORT           Change the default Mind Express Port number. [default: 12000]
   --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: info]
-  --logfile=LOGFILE     Where should the logging file be located. [default: MacroServerMac.log]
-  --notifier=NOTIFIER   Do you want to use Growl, Notifier, or None to get
-                        notified when a modifier key pressed? [default: None]
+  --logfile=LOGFILE     Where should the logging file be located. 
+                        [default: MacroServerMac.log]
+  --notifier=NOTIFIER   Do you want to use Growl, Notifier, or None to get notified when 
+                        a modifier key pressed? [default: None]
 """
 # For debug
 import logging
@@ -34,13 +35,13 @@ except ImportError:
          ' is installed: \n'
          'https://github.com/willwade/MacroServerMac')
 # For the line command aspects
-import argparse
 try:
     from docopt import docopt
 except ImportError:
     exit('This script requires that `docopt` library'
          ' is installed: \n    pip install docopt\n'
          'https://github.com/docopt/docopt')
+
 
 # for the little GUI
 from Tkinter import *
@@ -99,16 +100,18 @@ class GrowlMESender(object):
 
 class LionNotifierMESender(object):
     """Makes use of the standard notifier that comes in Lion+ https://github.com/maranas/pyNotificationCenter"""
-    def  __init__(self):
+    def  __init__(self):    
+        """Lion notifier. """
         try:
-            import pyNotificationCenter
+            from pyNotificationCenter import pyNotificationCenter
+            self.notifier = pyNotificationCenter()
             self.sendStartUpMessage()
         except ImportError:
             logging.warning('pyNotificationCenter not installed')
-        return
+            return
    
     def sendStartUpMessage(self):
-        self.pyNotificationCenter.notify("MacroServer Mac started up..", "Will Wade", "Show instantly", sound=True)
+        self.notifier.notify("MacroServer Mac started up..", "Will Wade", "Show instantly", sound=True)
 
     def sendMessage(self, modifier, state):
         if state:
@@ -116,7 +119,7 @@ class LionNotifierMESender(object):
         else:
             msg = 'Off'
            
-        self.pyNotificationCenter.notify(modifier+" has been turned "+msg, "MacroServerMac", "Show instantly", userInfo={"action":"open_url", "value":"http://www.ganglionsoftware.com"})
+        self.notifier.notify(modifier+" has been turned "+msg, "MacroServerMac", "Show instantly", userInfo={"action":"open_url", "value":"http://www.ganglionsoftware.com"})
         logging.debug('pyNotifier called')
 
 class NullNotifier(object):
@@ -194,6 +197,11 @@ def callback():
     master.destroy()
     sys.exit()
 
+def startserver(host, port, tcphandler, notifier):
+    server = METCPServer((host, port), tcphandler, True, notifier)
+    server.serve_forever()
+
+
 if __name__ == '__main__':
     args = docopt(__doc__, version='MindExpressMacroServer vb1')
     hosts = list()
@@ -211,12 +219,11 @@ if __name__ == '__main__':
     logging.basicConfig(filename=args['--logfile'], level=numeric_level, format=FORMAT)
     
     # set up win    
-    master = Tk()    
-    b = Button(master, text="Kill MacroServer", command=callback)
-    b.pack()    
-    mainloop()
-    
-    #set up server   
+    #master = Tk()    
+    #b = Button(master, text="Kill MacroServer", command=callback)
+    #b.pack()
+    #set up server
     HOST, PORT = hosts[0], int(args['--port'])
-    server = METCPServer((HOST, PORT), METCPHandler, True, args['--notifier'])
-    server.serve_forever()
+    startserver(HOST, PORT, METCPHandler, args['--notifier'])
+    #master.mainloop()
+    
