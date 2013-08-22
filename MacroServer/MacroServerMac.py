@@ -111,7 +111,7 @@ class LionNotifierMESender(object):
             return
    
     def sendStartUpMessage(self):
-        self.notifier.notify("MacroServer Mac started up..", "Will Wade", "Show instantly", sound=True)
+        self.notifier.notify("MacroServer Mac started up..", "Will Wade", "...", sound=True)
 
     def sendMessage(self, modifier, state):
         if state:
@@ -119,7 +119,7 @@ class LionNotifierMESender(object):
         else:
             msg = 'Off'
            
-        self.notifier.notify(modifier+" has been turned "+msg, "MacroServerMac", "Show instantly", userInfo={"action":"open_url", "value":"http://www.ganglionsoftware.com"})
+        self.notifier.notify(modifier+" has been turned "+msg, "MacroServerMac", "...", sound=True)
         logging.debug('pyNotifier called')
 
 class NullNotifier(object):
