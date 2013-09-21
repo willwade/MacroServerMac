@@ -45,6 +45,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((args.host, args.port))
 # Send the data
 data = dataform(args)
+print data
 len_sent = s.send(data)
 # Clean up
 s.close()
