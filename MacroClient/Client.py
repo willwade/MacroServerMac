@@ -35,18 +35,25 @@ parser.add_argument('--subject','-sbj', type=str, default='execute_and_get_modif
 parser.add_argument('--command','-cmd', type=str, default='send_key', help='Send what command')
 parser.add_argument('--subcommand','-scmd', type=str, default='normalkey:h|modifier:0', help='Send what sub-command. Note: Needed subelements provided in a key:value pair')
 # All the MeX info
-parser.add_argument('--xmeuser','-xu', type=str, default='user1-4874-305132', help='MindExpress User')
+parser.add_argument('--xmeuser','-xu', type=str, default='user1', help='MindExpress User')
 parser.add_argument('--xmelang','-xl', type=int, default='9', help='Language int')
 parser.add_argument('--xstaver','-xs', type=str, default='1.1.1.1261', help='Version ID of this client')
 args = parser.parse_args() 
 
 # Connect to the server
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((args.host, args.port))
+#s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#s.connect((args.host, args.port))
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 # Send the data
 data = dataform(args)
-print data
-len_sent = s.send(data)
+#len_sent = s.send(data)
+dataN = len(data)
+divN = dataN/256
+modN = dataN % 256
+s.sendto(str(divN)+str(modN)+data, (args.host, args.port))
+#s.send(str(divN)+str(modN)+data)
 # Clean up
 s.close()
      

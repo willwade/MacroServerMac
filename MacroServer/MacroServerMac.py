@@ -6,9 +6,9 @@
 """
 MacroServer for Mac.  Control your mac from another Machine over TCP/IP. 
 
-usage: MindExpressMacroServer [-h] [--host=HOST] [--port=PORT]
-                              [--loglevel=LOGLEVEL] [--logfile=LOGFILE]
-                              [--notifier=NOTIFIER]
+usage: MindExpressMacroServer [-h] [--host=HOST] [--port=PORT] [--notifier=NOTIFIER] 
+                              [--loglevel=LOGLEVEL] [--logtype=LOGTYPE] [--logfile=LOGFILE]
+                              
 
 Runs a Mind Express Control Server.
 
@@ -16,12 +16,13 @@ optional arguments:
   -h, --help            show this help message and exit
   -v, --version         show the version number of this script and exit
   --host=HOST           Allow from one or several ip-address. [default: 0.0.0.0]
-  --port=PORT           Change the default Mind Express Port number. [default: 12000]
-  --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: info]
-  --logfile=LOGFILE     Where should the logging file be located. 
-                        [default: MacroServerMac.log]
+  --port=<PORT>         Change the default Mind Express Port number. [default: 12000]
   --notifier=NOTIFIER   Do you want to use Growl, Notifier, or None to get notified when 
                         a modifier key pressed? [default: None]
+  --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: info]
+  --logtype=LOGTYPE        Where do you want the log to go? (stdout, file) [default: file]
+  --logfile=LOGFILE     Where should the logging file be located. 
+                        [default: MacroServerMac.log]
 """
 # For debug
 import logging
@@ -42,10 +43,11 @@ except ImportError:
          ' is installed: \n    pip install docopt\n'
          'https://github.com/docopt/docopt')
 
-
+#for the better file logging using platypus
+import os
 # for the little GUI
-from Tkinter import *
-import sys
+#from Tkinter import *
+#import sys
          
 class GrowlMESender(object):
     """https://github.com/kfdm/gntp 
@@ -111,7 +113,8 @@ class LionNotifierMESender(object):
             return
    
     def sendStartUpMessage(self):
-        self.notifier.notify("MacroServer Mac started up..", "Will Wade", "...", sound=True)
+        self.notifier.notify("MacroServer Mac started up..", "MacroServer", "...", sound=True)
+        logging.info('MacroServer started up')
 
     def sendMessage(self, modifier, state):
         if state:
@@ -120,7 +123,9 @@ class LionNotifierMESender(object):
             msg = 'Off'
            
         self.notifier.notify(modifier+" has been turned "+msg, "MacroServerMac", "...", sound=True)
+        logging.info(modifier+" has been turned "+msg)
         logging.debug('pyNotifier called')
+
 
 class NullNotifier(object):
     """A null notifier if no notifications required"""
@@ -131,12 +136,18 @@ class NullNotifier(object):
 
     def sendStartUpMessage(self):
         """Basic startup"""
-        logging.debug('null notifier started up')
+        logging.info('MacroServer notifier started up')
         return True
 
     def sendMessage(self, modifier, state):
         """Basic sendMessage"""
-        logging.debug('null modifier notifier called')
+        if state:
+            msg = 'On'
+        else:
+            msg = 'Off'
+           
+        logging.info(modifier+" has been turned "+msg)
+        logging.debug('nullNotifier called')
         return True
 
 class MEUIState(object):
@@ -183,13 +194,14 @@ class METCPHandler(SocketServer.BaseRequestHandler):
            
     def handle(self):
         # self.request is the TCP socket connected to the client
-        self.data = self.request.recv(1024).strip()
-        logging.debug(self.data)
+        self.data = self.request.recv(1024)
+        logging.debug(self.request.recv(1024))
+        logging.info('recieved some data')
         r = MExpressHandler(self.data, self.server.meowi, self.server.notifier)
         if (r.isMex):
             r.doCommand()
         else:
-            logging.warning('Not MindExpress')
+            logging.error('Not a MindExpress data packet!')
         # if need to send anything back..
         #self.request.sendall(self.data.upper())
 
@@ -198,10 +210,13 @@ def callback():
     sys.exit()
 
 def startserver(host, port, tcphandler, notifier):
-    server = METCPServer((host, port), tcphandler, True, notifier)
-    server.serve_forever()
-
-
+    try: 
+        server = METCPServer((host, port), tcphandler, True, notifier)
+        server.serve_forever()
+    except: 
+        logging.critical("We have a problem houston. The server is likely to be running already. Open Activity Monitor and kill all MacroServer Clients.")
+        exit()
+        
 if __name__ == '__main__':
     args = docopt(__doc__, version='MindExpressMacroServer vb1')
     hosts = list()
@@ -216,7 +231,14 @@ if __name__ == '__main__':
     if not isinstance(numeric_level, int):
         raise ValueError('Invalid log level: %s' % loglevel)
     FORMAT = '%(asctime)s  %(levelname)s %(message)s'
-    logging.basicConfig(filename=args['--logfile'], level=numeric_level, format=FORMAT)
+    if (args['--logtype']=='file'):
+        if (args['--logfile'][0]=='~'):
+            lpath = os.path.join(os.path.expanduser("~"), args['--logfile'][2:])
+        else:
+            lpath = args['--logfile']
+        logging.basicConfig(filename=lpath, level=numeric_level, format=FORMAT)
+    else:
+        logging.basicConfig(level=numeric_level, format=FORMAT)
     
     # set up win    
     #master = Tk()    

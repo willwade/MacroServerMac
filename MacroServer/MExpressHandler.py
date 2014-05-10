@@ -60,7 +60,8 @@ class MExpressHandler(object):
         func_name = 'control_'+str(self.data['command'])
         # if doing multi-platform    
         #func_name = 'control_'+pform+'_'++str(self.data['command'])
-        logging.debug('About to call..'+func_name)      
+        logging.debug('About to call..'+func_name)
+        logging.debug(self.data)    
         func = getattr(self,func_name)
         return func()
     
@@ -84,7 +85,7 @@ class MExpressHandler(object):
                 cmdappend += 'control down, '
             if (self.data['modifier'] == '3'):
                 cmdappend += 'option down, '   
-            if (self.data['modifier'] == '4'):
+            if (self.data['modifier'] == '4' or self.data['modifier'] == '8'):
                 cmdappend += 'command down, '
             cmdappend = cmdappend[:-len(', ')]+'}'
                                   
@@ -94,9 +95,9 @@ class MExpressHandler(object):
             escape = {'\\':'\\\\', '"':'\"',"'":"\'"}
             dataforos = self.replace_all(self.data['normalkey'],escape)
             cmd = "osascript -e 'tell application \"System Events\" to keystroke \""+dataforos+"\""+cmdappend+"'"
-            os.system(cmd)
             logging.debug('system call:'+cmd)
             logging.debug('sticky:'+str(self.meowi.sticky))
+            os.system(cmd)
         elif (self.data.has_key('specialkey')):
             logging.debug('special send_key:'+self.data['specialkey'])
             k = AppleKeyboardEvents()
@@ -124,7 +125,7 @@ class MExpressHandler(object):
                 self.meowi.sticky_toggle('option')
                 self.notifier.sendMessage('option',self.meowi.sticky['option'])
                 logging.debug('option set')
-            elif (self.data['modifier'] == '4'):
+            elif (self.data['modifier'] == '4' or self.data['modifier'] == '8'):
                 self.meowi.sticky_toggle('command')
                 self.notifier.sendMessage('command',self.meowi.sticky['command'])
                 logging.debug('cmd set')
