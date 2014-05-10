@@ -7,7 +7,7 @@ For the server, there are three binaries created of the server for the Mac and a
 - [Standard MacroServerMac](http://macroservermac.s3.amazonaws.com/MacroServerMac.zip) which outputs some nice messages to a screen when it recieves data from MindExpress
 - [A debugging MacroServerMac](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip) - the same as the Standard version but a lot more data is outputted. 
 - [Service MacroServerMac](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip). Useful for running as a background task on login. 
-- [Mac Keyboard.jmm]((http://macroservermac.s3.amazonaws.com/keyboard_mac.jmm). Open this in MindExpress. Note that for this to look nice you will need to install ["VAG Rounded Light"](http://www.fonts101.com/fonts/view/Uncategorized/39723/VAGRoundedLightSSi) on the PC (just download and double click!).
+- [Mac Keyboard.jmm](http://macroservermac.s3.amazonaws.com/keyboard_mac.jmm). Open this in MindExpress. Note that for this to look nice you will need to install ["VAG Rounded Light"](http://www.fonts101.com/fonts/view/Uncategorized/39723/VAGRoundedLightSSi) on the PC (just download and double click!).
 
 If you are at all unsure how to use this please read on!
 
@@ -34,7 +34,6 @@ Click on the "Accessibility" pane (formerly "Universal Access") in "System Prefe
 #####Run the app
 Download [this zip file](http://macroservermac.s3.amazonaws.com/MacroServerMac.zip) containing the application. Double click it to run it. Thats it. Note there is very little in the way of an interface. The most useful thing about this front-end app is the ability to quit it if something goes wrong. NB: Don't run the app twice! 
 
-(Note that all log files are stored in ~/Library/Logs/MacroServerMac.log (The Library directory is hidden by default on Lion upwards. [Follow these steps](http://osxdaily.com/2011/07/22/access-user-library-folder-in-os-x-lion/) to open the directory required. Just double clicking on the .log file should open it in the console log viewer.)
 
 ####On your PC (the "Client")####
 Next, go to your PC with MindExpress (make sure its a recent version) and open [this jmm file](http://macroservermac.s3.amazonaws.com/keyboard_mac.jmm).  
@@ -42,12 +41,16 @@ Next, go to your PC with MindExpress (make sure its a recent version) and open [
 For the first time you run this you will need to tell MindExpress where to send the keystrokes too. This means editing the page - and in particular the "On" button at the bottom left. Press F2 (Edit mode). Double click on the bottom left "On" button. In the bottom left panel, select the second item down titled "Windows Control: Start Sending"  and write in your mac's IP address. Press OK. Exit out of Edit mode (Press F2 again) and you should now be set! Hit the "On" button and you will see it move to non-greyed out set of buttons. Clicking on them will send text to the mac. Note the Mouse icon in the top right which also allows you to control the Mouse. 
 
 ### Running it as a service on a mac###
-If you have carried out the above and its gone well you possibly want to make the application run all the time on the mac. This is simple enough - [follow the instructions here](http://support.apple.com/kb/HT2602). There is a [silent MacroServer build for this purpose which you can download here](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip)
+If you have carried out the above and its gone well you possibly want to make the application run all the time on the mac. This is simple enough - [follow the instructions here](http://support.apple.com/kb/HT2602). I do recommend using this [silent MacroServer version for this purpose which you can download here](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip). 
+
+(Note that all log files for this version are stored in ~/Library/Logs/MacroServerMac.log The Library directory is hidden by default on Lion upwards. [Follow these steps](http://osxdaily.com/2011/07/22/access-user-library-folder-in-os-x-lion/) to open the directory required. Just double clicking on the .log file should open it in the console log viewer.)
 
 ###What if you are having problems?###
 Download [this](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip) - run it and send me the output. Number one problem is that the application is running already - or you've tried to quit it and it won't die properly. In which case you will need to [kill all](http://osxdaily.com/2010/08/15/mac-task-manager/) running copies of the macroserver application. 
 
 ###The geekier but more powerful approach###
+
+So read on if you want to know a little more and play with this/debug it all.. NB: For this I assume you know your round a mac a little bit..
 
 ####Server####
 
@@ -66,6 +69,8 @@ NB: at present it won't allow multiple IP address' despite it saying so!
 If you want fancy notifications of which modifier key has been set by MindExpress install the Growl Notfication plug-in. Don't fret its easy - and the results are neat. [See the information here for installation](https://github.com/kfdm/gntp#installation). Once installed you will probably want to run it like this:
 
     python MacroServerMac.py --loglevel DEBUG --usegrowl True
+    
+NB: This isn't in the standard install due to the need to compile in the Growl application. I wish it was a bit easier because growl is far nicer than the standard notification view. 
 
 ####Client####
 
