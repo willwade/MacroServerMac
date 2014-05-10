@@ -49,7 +49,8 @@ If you have carried out the above and its gone well you possibly want to make th
 ###What if you are having problems?###
 Download [this](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip) - run it and send me the output. Number one problem is that the application is running already - or you've tried to quit it and it won't die properly. In which case you will need to [kill all](http://osxdaily.com/2010/08/15/mac-task-manager/) running copies of the macroserver application. 
 
-###The geekier but more powerful approach###
+The geekier but more powerful approach
+------------------
 
 So read on if you want to know a little more and play with this/debug it all.. NB: For this I assume you know your round a mac a little bit..
 
@@ -73,9 +74,10 @@ If you want fancy notifications of which modifier key has been set by MindExpres
     
 NB: This isn't in the standard install due to the need to compile in the Growl application. I wish it was a bit easier because growl is far nicer than the standard notification view. 
 
-####Client####
+The Client Code
+------------------
 
-[Find here an example MindExpress-For-Mac jmm file](Layouts/README.md) that I do know works(!). 
+([Find here an example MindExpress-For-Mac jmm file](Layouts/README.md) that I do know works(!))
 
 If you don't have/don't know what MindExpress is and just want to test what MindExpress sends you can use the Client. You can also use this for applications other than MindExpress by sending the string to call the executable in a shell e.g.:
 
@@ -108,14 +110,12 @@ In your windows command prompt
 Problems/To-Do
 ------------------
 
-* Some of the key-mapping is wrong. Please fix the KeyCodes.csv for the correct mapping
+* Some of the key-mapping is a bit wrong. I'm relying on users telling me whats not correct
 * Implement some better exception code - you will need to keep an eye on the terminal for any exceptions caused as well as the log file
 * Speed it up. My guess is the slowness is in the 3/4 regex's that are done when extracting the data from the pseudo-xml. It could be done in one. Also the csv file is re-read on each key. That could be put in memory since its small enough. 
 * Multi-platform code (will need combining with [PyUserInput](https://github.com/SavinaRoja/PyUserInput) when that project is working nicely with keyboards). Should be straightforward enough - particularly Windows (only reason I can think of doing this is making use of Growl notifier on Windows)
 * Allow from IP/Range (You can specify the ip address in the line command - I just havent written the code to allow multiple address')
 * Window control code (It can launch applications. Just not control the window placement. Reason for this is it's not a very Mac thing to do/care about.. I'm not sure this will see the light of day..)
-* Turn it into a nice user friendly binary 
-* Develop some tabs for the keyboard demo, demonstrating various Mac application shortcuts
 * Somehow send a start moving and stop moving mouse command
 
 Fun(?!) asides
@@ -126,7 +126,7 @@ If you are looking to convert Windows Keyboard/Mouse commands look at AppleUIEve
 Why??!
 ------------------
 
-Well because if you want to control a computer, send text to another computer, its not the easiest if you use an alternative input method for a PC. TeamViewer (and others) are OK but they don't convert the Mac Keycodes reliably.
+Some people have asked why bother when there are other approaches (e.g. TeamViewer). Well the main one is that teamviewer requires a full window open on the client, does not make use of internal only IP's and is a pain as it doesn't send the correct Mac keystrokes from a PC. 
 
 
 What are all the files? (/How does this work?)
