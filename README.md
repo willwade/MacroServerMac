@@ -3,7 +3,8 @@
 
 A server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac.
 
-For the server, there are three binaries created of the server for the Mac and a demonstration keyboard for MindExpress. 
+For the server component, there are three binaries created for the Mac and a demonstration keyboard for MindExpress.  
+
 - [Standard MacroServerMac](http://macroservermac.s3.amazonaws.com/MacroServerMac.zip) which outputs some nice messages to a screen when it recieves data from MindExpress
 - [A debugging MacroServerMac](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip) - the same as the Standard version but a lot more data is outputted. 
 - [Service MacroServerMac](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip). Useful for running as a background task on login. 
