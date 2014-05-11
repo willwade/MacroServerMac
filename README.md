@@ -49,7 +49,7 @@ If you have carried out the above and its gone well you possibly want to make th
 (Note that all log files for this version are stored in ~/Library/Logs/MacroServerMac.log The Library directory is hidden by default on Lion upwards. [Follow these steps](http://osxdaily.com/2011/07/22/access-user-library-folder-in-os-x-lion/) to open the directory required. Just double clicking on the .log file should open it in the console log viewer.)
 
 ##What if you are having problems?##
-Download [this](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip) - run it and send me the output. Number one problem is that the application is running already - or you've tried to quit it and it won't die properly. In which case you will need to [kill all](http://osxdaily.com/2010/08/15/mac-task-manager/) running copies of the macroserver application. 
+Download [this](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip) - run it and send [me](http://willwa.de/) the output. Number one problem is that the application is running already - or you've tried to quit it and it won't die properly. In which case you will need to [kill all](http://osxdaily.com/2010/08/15/mac-task-manager/) running copies of the macroserver application. 
 
 
 Why??!
