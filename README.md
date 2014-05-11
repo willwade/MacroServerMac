@@ -15,7 +15,7 @@ There are a number of parts to this project. More detailed information can be fo
 How to get started
 ------------------
 
-It may be worth spending a couple of lines explaining how this works. First you need MindExpress running on the PC. MindExpress has a feature which sends text to another computer - instead of its own message bar. For it to do that a small piece of software must run on the other computer (the "Server"). So to set this up you need to make sure both MindExpress is setup correctly and the Server - in this case a Mac. We will now try to cover both sides of this. 
+This is fairly straightforward - in short you make sure there is a piece of software on the Mac ready to listen to MindExpress on a PC. And on the PC you edit a grid to send output to "Windows Control". I'll try and take you through the steps in a bit more detail..
 
 ##On your Mac (the "Server")##
 If you are running this for the first time and running the latest Mac operating system you may run into problems with the security settings. If so you will need to turn-off Gatekeeper. If you aren't you can continue reading from "IP details". 
