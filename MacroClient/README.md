@@ -2,7 +2,7 @@
 The Client Code
 ------------------
 
-([Find here an example MindExpress-For-Mac jmm file](Layouts/README.md) that I do know works(!))
+([Find here an example MindExpress-For-Mac jmm file](/Layouts/README.md) that I do know works(!))
 
 If you don't have/don't know what MindExpress is and just want to test what MindExpress sends you can use the Client. You can also use this for applications other than MindExpress by sending the string to call the executable in a shell e.g.:
 
