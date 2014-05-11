@@ -6,10 +6,15 @@ There are some pre-compiled binaries available to download:
 - [MacroServer - Debug](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip). If you want to know whats not working try this. 
 - [MacroServer - No Output & backgrounded](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip) (for running as a service)
 
-Or run the server in the terminal by checking out the code:
+Or run the server in the terminal by checking out the code and installing the dependencies :
 
     git clone https://github.com/willwade/MacroServerMac.git
     cd MacroServerMac/MacroServer
+    pip install docopt 
+    curl -O https://raw.githubusercontent.com/maranas/pyNotificationCenter/master/pyNotificationCenter.py
+
+then running it:
+
     python MacroServerMac.py
 
 It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. You may want to change some of the settings. All the different options:
