@@ -3,12 +3,12 @@
 
 This is a server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac. MindExpress is a Windows based application that is largely used to support individuals who require a communication (Text to speech) software package on their system with other features such as symbol support and alternative access. 
 
-This, and other similar software is great as it allows sentences to be constructed into a message window - or piped out to another program on their computer. But what if they wanted that text to appear on another computer? Or even - control the mouse or applications on that other computer? Well MindExpress has a solution called "MacroServer". The idea is that a Windows server excutable runs on the computer you are sending the text to and it listens for commands from the MindExpress running PC. Jabbla have only made a Windows based Server executable - this is the home of the Mac based one. 
+This, and other similar software is great as it allows sentences to be constructed into a message window - or piped out to another program on their computer. But what if they wanted that text to appear on another computer? Or even - control the mouse or applications on that other computer? Well MindExpress has a solution called "MacroServer". The idea is that a small little application runs on the computer you are sending the text to and it listens for commands from the MindExpress running PC. This is known as a MacroServer and Jabbla have only made a Windows based version of - this is the home of the Mac based one. 
 
 There are a number of parts to this project. More detailed information can be found on the relevant pages below - or just read the "get started" section on just running this thing.
 
-- [MacroServer (Mac)](MacroServer/#readme) - The code for what runs the server on the Mac
-- [MacroClient](MacroClient/#readme) - Although you can use MindExpress this client code has been written to emulate MindExpress - useful for testing purposes or using within a different programme.
+- [MacroServer (Mac)](MacroServer/#readme) - The server code. This is the majority of the project and probably why you are here. A quick guide on getting you up and running is below or click on the link for more detailed information. 
+- [MacroClient](MacroClient/#readme) - Although you can use MindExpress as a 'client' this client code has been written to emulate MindExpress - useful for testing purposes or using within a different programme.
 - [Layouts](Layouts/#readme) - Home of 1 (at the moment) keyboard layout for MindExpress that has been designed to specifically work with this Mac Server software.
 
 
