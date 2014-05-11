@@ -1,5 +1,11 @@
 ####Server####
 
+There are some binaries available to download:
+
+- [MacroServer - Standard](http://macroservermac.s3.amazonaws.com/MacroServerMac.zip). Use this one for first testing it all works.
+- [MacroServer - Debug](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip). If you want to know whats not working try this. 
+- [MacroServer - No Output & backgrounded](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip) (for running as a service)
+
 Run the server in the terminal (on the Mac):
 
     python MacroServerMac.py
@@ -33,6 +39,28 @@ When MacroServerMac.py is run a number of things happen:
 * MExpressHandler sets keys using applescript and mouse commands using Quartz. 
 
 For information on the API from MindExpress [read the README-API.md documentation](README-API.md)
+
+Compiling it
+------------------
+The line command has been compiled with [Platypus](http://sveinbjorn.org/platypus). Simply put all of the code from the MacroServer (this) directory in the Platypus build - PLUS - [docopt.py (0.6.1)](https://github.com/docopt/docopt/blob/0.6.1/docopt.py) and  [pyNotificationCenter.py](https://github.com/maranas/pyNotificationCenter/blob/master/pyNotificationCenter.py). Alter your line command settings appropriately. This is the commands for the different releases:
+
+###MacroSeverMac - Standalone###
+
+    --loglevel=error --logtype=stdout --notifier=Notifier
+
+(Also set the Output to "Text Window") 
+
+###MacroSeverMac - Debug###
+
+    --loglevel=info --logtype=stdout --notifier=Notifier
+
+(Also set the Output to "Text Window") 
+
+###MacroSeverMac - Service###
+
+    --loglevel=warn --logtype=file --notifier=Notifier --logfile=~/Library/Logs/MacroServerMac.log
+    
+(Also set the "Run in background" flag and Output to "None")
 
 Fun(?!) asides
 ------------------
