@@ -1,7 +1,7 @@
 (MindExpress) MacroServer for Mac
 ===========
 
-A server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac. MindExpress is a Windows based application that is largely used to support individuals who require a communication (Text to speech) software package on their system with other features such as symbol support and alternative access. 
+This is a server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac. MindExpress is a Windows based application that is largely used to support individuals who require a communication (Text to speech) software package on their system with other features such as symbol support and alternative access. 
 
 This, and other similar software is great as it allows sentences to be constructed into a message window - or piped out to another program on their computer. But what if they wanted that text to appear on another computer? Well MindExpress has a solution called "MacroServer". The idea is that a Windows server excutable runs on the computer you are sending the text to and it listens for commands from the MindExpress running PC. Jabbla have only made a Windows based Server executable - this is the home of the Mac based one. 
 
@@ -12,7 +12,7 @@ There are a number of parts to this project. More detailed information can be fo
 - [Layouts](Layouts/#readme) - Home of 1 (at the moment) keyboard layout for MindExpress that has been designed to specifically work with this Mac Server software.
 
 
-How to get started (/How to use the binaries)
+How to get started
 ------------------
 
 It may be worth spending a couple of lines explaining how this works. First you need MindExpress running on the PC. MindExpress has a feature which sends text to another computer - instead of its own message bar. For it to do that a small piece of software must run on the other computer (the "Server"). So to set this up you need to make sure both MindExpress is setup correctly and the Server - in this case a Mac. We will now try to cover both sides of this. 
