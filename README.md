@@ -3,7 +3,7 @@
 
 This is a server, and set of modules for listening to a [MindExpress](http://www.jabbla.com/products.asp?itemID=9) client and controlling a mac. MindExpress is a Windows based application that is largely used to support individuals who require a communication (Text to speech) software package on their system with other features such as symbol support and alternative access. 
 
-This, and other similar software is great as it allows sentences to be constructed into a message window - or piped out to another program on their computer. But what if they wanted that text to appear on another computer? Well MindExpress has a solution called "MacroServer". The idea is that a Windows server excutable runs on the computer you are sending the text to and it listens for commands from the MindExpress running PC. Jabbla have only made a Windows based Server executable - this is the home of the Mac based one. 
+This, and other similar software is great as it allows sentences to be constructed into a message window - or piped out to another program on their computer. But what if they wanted that text to appear on another computer? Or even - control the mouse or applications on that other computer? Well MindExpress has a solution called "MacroServer". The idea is that a Windows server excutable runs on the computer you are sending the text to and it listens for commands from the MindExpress running PC. Jabbla have only made a Windows based Server executable - this is the home of the Mac based one. 
 
 There are a number of parts to this project. More detailed information can be found on the relevant pages below - or just read the "get started" section on just running this thing.
 
