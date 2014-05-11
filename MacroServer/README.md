@@ -1,20 +1,44 @@
 ####Server####
 
-There are some binaries available to download:
+There are some pre-compiled binaries available to download:
 
 - [MacroServer - Standard](http://macroservermac.s3.amazonaws.com/MacroServerMac.zip). Use this one for first testing it all works.
 - [MacroServer - Debug](http://macroservermac.s3.amazonaws.com/MacroServerMacDebug.zip). If you want to know whats not working try this. 
 - [MacroServer - No Output & backgrounded](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip) (for running as a service)
 
-Run the server in the terminal (on the Mac):
+Or run the server in the terminal by checking out the code:
 
+    git clone https://github.com/willwade/MacroServerMac.git
+    cd MacroServerMac/MacroServer
     python MacroServerMac.py
 
-It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. For help running the command run..
+It will now listen for any calls in on the MindExpress port. Please make sure the sending machine has the correct settings in the firewall configuration. You may want to change some of the settings. All the different options:
 
-    python MacroServer/MacroServerMac.py --help
+    usage: MindExpressMacroServer [-h] [--host=HOST] [--port=PORT] [--notifier=NOTIFIER] 
+                                  [--loglevel=LOGLEVEL] [--logtype=LOGTYPE] [--logfile=LOGFILE]
+                              
 
+    Runs a Mind Express Control Server.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -v, --version         show the version number of this script and exit
+      --host=HOST           Allow from one or several ip-address. [default: 0.0.0.0]
+      --port=<PORT>         Change the default Mind Express Port number. [default: 12000]
+      --notifier=NOTIFIER   Do you want to use Growl, Notifier, or None to get notified when 
+                            a modifier key pressed? [default: None]
+      --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: info]
+      --logtype=LOGTYPE        Where do you want the log to go? (stdout, file) [default: file]
+      --logfile=LOGFILE     Where should the logging file be located. 
+                            [default: MacroServerMac.log]
+                            
+                        
 NB: at present it won't allow multiple IP address' despite it saying so!
+
+I personally develop with:
+
+        python MacroServerMac.py --loglevel=debug --logtype=stdout --notifier=Notifier
+
 
 #####Dependencies#####
 
@@ -46,19 +70,19 @@ The line command has been compiled with [Platypus](http://sveinbjorn.org/platypu
 
 ###MacroSeverMac - Standalone###
 
-    --loglevel=error --logtype=stdout --notifier=Notifier
+    --loglevel=info --logtype=stdout --notifier=Notifier
 
 (Also set the Output to "Text Window") 
 
 ###MacroSeverMac - Debug###
 
-    --loglevel=info --logtype=stdout --notifier=Notifier
+    --loglevel=debug --logtype=stdout --notifier=Notifier
 
 (Also set the Output to "Text Window") 
 
 ###MacroSeverMac - Service###
 
-    --loglevel=warn --logtype=file --notifier=Notifier --logfile=~/Library/Logs/MacroServerMac.log
+    --loglevel=error --logtype=file --notifier=Notifier --logfile=~/Library/Logs/MacroServerMac.log
     
 (Also set the "Run in background" flag and Output to "None")
 
