@@ -37,23 +37,26 @@ parser.add_argument('--subcommand','-scmd', type=str, default='normalkey:h|modif
 # All the MeX info
 parser.add_argument('--xmeuser','-xu', type=str, default='user1', help='MindExpress User')
 parser.add_argument('--xmelang','-xl', type=int, default='9', help='Language int')
-parser.add_argument('--xstaver','-xs', type=str, default='1.1.1.1261', help='Version ID of this client')
+parser.add_argument('--xstaver','-xs', type=str, default='1.1.1.1354', help='Version ID of this client')
 args = parser.parse_args() 
 
-# Connect to the server
-#s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#s.connect((args.host, args.port))
-
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-# Send the data
+# Main
 data = dataform(args)
-#len_sent = s.send(data)
-dataN = len(data)
-divN = dataN/256
-modN = dataN % 256
-s.sendto(str(divN)+str(modN)+data, (args.host, args.port))
-#s.send(str(divN)+str(modN)+data)
-# Clean up
-s.close()
-     
+# Create a socket (SOCK_STREAM means a TCP socket)
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+try:
+    # Connect to server and send data
+    sock.connect((args.host, args.port))
+    # the following is from the suggested docs of how it works - but then just sending these bytes below seems to work. No idea..
+    header = chr(0)+chr(len(data))
+    #divN = dataN/256
+    #modN = dataN % 256
+    # \x00\xc3
+    sock.sendall(header+data)
+    #sock.sendall(data)
+finally:
+    sock.close()
+
+
+ 
