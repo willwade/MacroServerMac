@@ -5,6 +5,9 @@
     # To turn this into a binary
     python pyinstaller.py -F -w Client.py
     (w for windowless version)
+    
+    <command="window_control"\><subcommandid="dock"\><value="100"\><direction="0"\><gotocorner="0"\>
+    --cmd window_control --scmd subcommandid:dock|value:100|direction:0|gotocorner:0
 """
 
 import socket
@@ -13,7 +16,8 @@ import logging
 
 def dataform(args):
     data = '{'+args.pluginid+'}'
-    data += '<subject="'+args.subject+'"\>'
+    if (args.subject != ''): 
+        data += '<subject="'+args.subject+'"\>'
     data += '<command="'+args.command+'"\>'
     for subcmd in args.subcommand.split('|'):
         data += '<'+str(subcmd.split(':')[0])+'="'+subcmd.split(':')[1]+'"\>'
@@ -50,9 +54,6 @@ try:
     sock.connect((args.host, args.port))
     # the following is from the suggested docs of how it works - but then just sending these bytes below seems to work. No idea..
     header = chr(0)+chr(len(data))
-    #divN = dataN/256
-    #modN = dataN % 256
-    # \x00\xc3
     sock.sendall(header+data)
     #sock.sendall(data)
 finally:
