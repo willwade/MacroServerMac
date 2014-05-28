@@ -7,7 +7,8 @@
     (w for windowless version)
     
     <command="window_control"\><subcommandid="dock"\><value="100"\><direction="0"\><gotocorner="0"\>
-    --cmd window_control --scmd subcommandid:dock|value:100|direction:0|gotocorner:0
+    -cmd window_control -scmd subcommandid:dock|value:100|direction:0|gotocorner:0
+    python Client.py --host 10.211.55.8 -cmd mouse -scmd "subcommandid:change_location|value:100|direction:0|click:0" -sbj ''
 """
 
 import socket
@@ -42,13 +43,17 @@ parser.add_argument('--subcommand','-scmd', type=str, default='normalkey:h|modif
 parser.add_argument('--xmeuser','-xu', type=str, default='user1', help='MindExpress User')
 parser.add_argument('--xmelang','-xl', type=int, default='9', help='Language int')
 parser.add_argument('--xstaver','-xs', type=str, default='1.1.1.1354', help='Version ID of this client')
+# delay the running?
+parser.add_argument('--delay','-d', action='store_true', default=False, help='Delay the running of this script?')
 args = parser.parse_args() 
 
 # Main
 data = dataform(args)
 # Create a socket (SOCK_STREAM means a TCP socket)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+if args.delay:
+    import time
+    time.sleep(5)
 try:
     # Connect to server and send data
     sock.connect((args.host, args.port))
