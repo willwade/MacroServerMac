@@ -57,6 +57,11 @@ class MExpressHandler(object):
         # the following could allow this library to be multiplatform..
         pform = platform.system()
         # this is like doing a switch
+        if ('Command' in self.data):
+        	self.data['command'] = self.data['Command']
+        	self.data['modifier'] = self.data['Modifier']
+        	self.data['specialkey'] = self.data['SpecialKey']
+
         func_name = 'control_'+str(self.data['command'])
         # if doing multi-platform    
         #func_name = 'control_'+pform+'_'++str(self.data['command'])
