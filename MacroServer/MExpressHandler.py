@@ -3,7 +3,7 @@
 # NB:  could be multi-platform
 # Date: April 2013
 
-# Re used to analyse the packet recieved 
+# Re used to analyse the packet recieved
 import re
 # Platform may be excluded - would allow us to map to windows/mac/linux
 import os, platform
@@ -19,7 +19,7 @@ from AppleUIEvents import AppleMouseEvents
 from AppleUIEvents import AppleKeyboardEvents
 
 class MExpressHandler(object):
-    
+
     def __init__(self,request,meowi,notifier):
         self.data = ''
         self.pluginid = ''
@@ -30,7 +30,18 @@ class MExpressHandler(object):
         self.meowi = meowi
         #growl
         self.notifier = notifier
-         
+
+    def key_lower(self,d):
+        """returns d for d or od for od with keys changed to lower case
+        """
+        for k in d.iterkeys():
+            v = d.pop(k)
+            if (type(k) == str) and (not k.islower()):
+                k = k.lower()
+            d[k] = v
+
+        return d
+
     def parseRequest(self,request):
         # first take the first {} as plug-in id
         # NB: this is a little unpleasant to look at but works so deal with it
@@ -50,33 +61,32 @@ class MExpressHandler(object):
         if (self.data.has_key('X_STAVersion')):
             self.mexinfo['X_STAVersion'] = self.data['X_STAVersion']
             self.data.pop('X_STAVersion', None)
+        logging.debug(request)
         logging.debug('Data all parsed')
+        self.data=self.key_lower(self.data)
+        logging.debug(self.data)
         return True
-                
+
     def doCommand(self):
         # the following could allow this library to be multiplatform..
         pform = platform.system()
         # this is like doing a switch
-        if ('Command' in self.data):
-        	self.data['command'] = self.data['Command']
-        	self.data['modifier'] = self.data['Modifier']
-        	self.data['specialkey'] = self.data['SpecialKey']
-
+        logging.debug(self.data)
         func_name = 'control_'+str(self.data['command'])
-        # if doing multi-platform    
+        # if doing multi-platform
         #func_name = 'control_'+pform+'_'++str(self.data['command'])
         logging.debug('About to call..'+func_name)
-        logging.debug(self.data)    
+        logging.debug(self.data)
         func = getattr(self,func_name)
         return func()
-    
+
     def replace_all(self, text, dic):
       for i, j in dic.iteritems():
         text = text.replace(i, j)
       return text
-       
+
     def control_send_key(self):
-        #add in the modifier key. 
+        #add in the modifier key.
         # this may not be correct if two modifier keys set
         cmdappend = ''
         if((int(self.data['modifier'])>0) or (any(self.meowi.sticky.itervalues()))):
@@ -89,12 +99,12 @@ class MExpressHandler(object):
             if (self.data['modifier'] == '2'):
                 cmdappend += 'control down, '
             if (self.data['modifier'] == '3'):
-                cmdappend += 'option down, '   
+                cmdappend += 'option down, '
             if (self.data['modifier'] == '4' or self.data['modifier'] == '8'):
                 cmdappend += 'command down, '
             cmdappend = cmdappend[:-len(', ')]+'}'
-                                  
-        # Now do something with the normal/specialkey 
+
+        # Now do something with the normal/specialkey
         if (self.data.has_key('normalkey')):
             logging.debug('normal send_key:'+self.data['normalkey'])
             escape = {'\\':'\\\\', '"':'\"',"'":"\'"}
@@ -112,10 +122,10 @@ class MExpressHandler(object):
             else:
                 logging.debug('converted to:'+str(specialcode))
                 cmd = "osascript -e 'tell application \"System Events\" to key code "+specialcode+cmdappend+"'"
-                os.system(cmd)        
+                os.system(cmd)
                 logging.debug('system call:'+cmd)
                 logging.debug('sticky:'+str(self.meowi.sticky))
-        
+
     def control_sticky_key(self):
         if(self.data.has_key('modifier')):
             if (self.data['modifier'] == '1'):
@@ -135,18 +145,18 @@ class MExpressHandler(object):
                 self.notifier.sendMessage('command',self.meowi.sticky['command'])
                 logging.debug('cmd set')
         return True
-        
+
     def control_pause(self):
         if(self.data.has_key('value')):
             # sleep is in seconds. pause command is in ms
             time.sleep(self.data['value']/1000)
         return True
-    
+
     def control_window_control(self):
         """
         I'm not too keen on all this for OSX but for completeness I think we should use:
         http://www.sirver.net/blog/2012/01/04/move-window-done-right/
-        
+
       <SubCommandId=1><Type=min>
         SubCommandID = 1, Type= Min - Minimise active
         SubCommandID = 1, Type= Max - Maximise active
@@ -167,7 +177,7 @@ irection]><GotoCorner=[gtc]>
             cmd = "osascript -e 'tell application \""+self.data['text']+"\" to activate'"
             os.system(cmd)
         return True
-    
+
     def control_mouse(self):
         """
         <SubCommandId=0><Value=val><Direction=directionval><click=0
@@ -183,41 +193,41 @@ irection]><GotoCorner=[gtc]>
         pos = m.currentPos()
         val = float(self.data['value'])
         logging.debug('Mouse movement')
-      
+
         if (self.data['subcommandid']=='change_location'):
             # get currentPos
             if (self.data['direction']=='0'):
                 # Up
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, up')
-                    m.mousefulldrag(pos.x,pos.y,pos.x,pos.y-val)                      
+                    m.mousefulldrag(pos.x,pos.y,pos.x,pos.y-val)
                 else:
                     logging.debug('up')
-                    m.mousemove(pos.x,pos.y-val)      
+                    m.mousemove(pos.x,pos.y-val)
             elif (self.data['direction']=='90'):
                 # Left
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, left')
                     m.mousefulldrag(pos.x,pos.y,pos.x-val,pos.y)
-                else:   
+                else:
                     logging.debug('left')
-                    m.mousemove(pos.x-val,pos.y)      
+                    m.mousemove(pos.x-val,pos.y)
             elif (self.data['direction']=='270'):
                 # Right
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, right')
-                    m.mousefulldrag(pos.x,pos.y,pos.x+val,pos.y)                
+                    m.mousefulldrag(pos.x,pos.y,pos.x+val,pos.y)
                 else:
                     logging.debug('right')
-                    m.mousemove(pos.x+val,pos.y) 
+                    m.mousemove(pos.x+val,pos.y)
             elif (self.data['direction']=='180'):
                 # Down
                 if (self.meowi.leftdrag):
                     logging.debug('leftdrag, down')
-                    m.mousefulldrag(pos.x,pos.y,pos.x,pos.y+val)      
+                    m.mousefulldrag(pos.x,pos.y,pos.x,pos.y+val)
                 else:
                     logging.debug('down')
-                    m.mousemove(pos.x,pos.y+val)      
+                    m.mousemove(pos.x,pos.y+val)
         elif (self.data['subcommandid']=='click'):
             if(self.data['click']=='0' and self.data['direction']=='90'):
                  logging.debug('click')
@@ -234,8 +244,8 @@ irection]><GotoCorner=[gtc]>
                 self.notifier.sendMessage('leftdrag',self.meowi.leftdrag)
                 logging.debug('drag lock '+str(self.meowi.leftdrag))
         return True
-    
-    
+
+
     def control_exit(self):
         """
         <SubCommandId=[subcomid]>
@@ -246,17 +256,16 @@ irection]><GotoCorner=[gtc]>
         """
         # only val 7 should do something - shut down the computer
         return True
-    
+
     # The rest of the commands do nothing
     def control_send_letter(self):
         return True
-    
+
     def control_sendonoff(self):
         return True
-    
+
     def control_alwaysontop(self):
         return True
-    
+
     def control_me_control(self):
         return True
-     

@@ -18,11 +18,11 @@ optional arguments:
   --host=HOST           Allow from one or several ip-address. [default: 0.0.0.0]
   --port=<PORT>         Change the default Mind Express Port number. [default: 12000]
   --notifier=NOTIFIER   Do you want to use Growl, Notifier, or None to get notified when 
-                        a modifier key pressed? [default: None]
+                        a modifier key pressed? [default: Notifier]
   --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: info]
-  --logtype=LOGTYPE        Where do you want the log to go? (stdout, file) [default: file]
+  --logtype=LOGTYPE     Where do you want the log to go? (stdout, file) [default: file]
   --logfile=LOGFILE     Where should the logging file be located. 
-                        [default: MacroServerMac.log]
+                        [default: ~/Library/Logs/MacroServerMac.log]
 """
 # For debug
 import logging
