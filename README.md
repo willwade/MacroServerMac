@@ -17,10 +17,10 @@ How to get started
 
 This is fairly straightforward - in short you make sure there is a piece of software on the Mac ready to listen to MindExpress on a PC. And on the PC you edit a grid to send output to "Windows Control". I'll try and take you through the steps in a bit more detail..
 
-##On your Mac (the "Server")##
+## On your Mac (the "Server")##
 If you are running this for the first time and running the latest Mac operating system you may run into problems with the security settings. If so you will need to turn-off Gatekeeper. If you aren't you can continue reading from "IP details". 
 
-###Gatekeeper
+### Gatekeeper
 So first off turn off Gatekeeper. Go to System Preferences and then open "Security & Privacy". Under the General pane you want to set "Allow apps downloaded from:" to be "Anywhere". (hint: if you aren't used to using a mac and are wondering why you can't change this - hit the lock button at the bottom left of the screen). 
 
 <!--
@@ -29,21 +29,21 @@ Next you have to enable Mac OS X's accessibility frameworks in System Preference
 Click on the "Accessibility" pane (formerly "Universal Access") in "System Preferences". At the bottom left of the pane is a checkbox setting called "Enable access for assistive devices". Click on the checkbox so the setting is enabled. Close out of System Preferences.
 -->
 
-###IP details
+### IP details
 [Grab your IP address](http://osxdaily.com/2010/11/21/find-ip-address-mac/) - you will need this for the PC (hint: it is probably worth "fixing" your ip address in the long run if you want to use this frequently). 
 
-###Run the app
+### Run the app
 Download [this zip file](http://macroservermac.s3.amazonaws.com/MacroServerMac.zip) containing the application. Double click it to run it. Thats it. Note there is very little in the way of an interface. The most useful thing about this front-end app is the ability to quit it if something goes wrong. NB: Don't run the app twice! 
 
 
-##On your PC (the "Client")##
+## On your PC (the "Client") ##
 Next, go to your PC with MindExpress (make sure its a recent version) and open [this jmm file](http://macroservermac.s3.amazonaws.com/keyboard_mac.jmm).  
 
 For the first time you run this you will need to tell MindExpress where to send the keystrokes too. This means editing the page - and in particular the "On" button at the bottom left. Press F2 (Edit mode). Double click on the bottom left "On" button. In the bottom left panel, select the second item down titled "Windows Control: Start Sending"  and write in your mac's IP address. ([Take a look at a screenshot of this which may help](http://i.imgur.com/q4HMJ5J.png)).  Press OK. Exit out of Edit mode (Press F2 again) and you should now be set! 
 
 Hit the "On" button and you will see it move to non-greyed out set of buttons. Clicking on them will send text to the mac. Note the Mouse icon in the top right which also allows you to control the Mouse. 
 
-## Running it as a service on a mac##
+## Running it as a service on a mac ##
 If you have carried out the above and its gone well you possibly want to make the application run all the time on the mac. This is simple enough - [follow the instructions here](http://support.apple.com/kb/HT2602). I do recommend using this [silent MacroServer version for this purpose which you can download here](http://macroservermac.s3.amazonaws.com/MacroServerMacService.zip). 
 
 (Note that all log files for this version are stored in ~/Library/Logs/MacroServerMac.log The Library directory is hidden by default on Lion upwards. [Follow these steps](http://osxdaily.com/2011/07/22/access-user-library-folder-in-os-x-lion/) to open the directory required. Just double clicking on the .log file should open it in the console log viewer.)
