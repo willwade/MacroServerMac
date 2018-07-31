@@ -12,6 +12,21 @@ There are a number of parts to this project. More detailed information can be fo
 - [Layouts](Layouts/#readme) - Home of 1 (at the moment) keyboard layout for MindExpress that has been designed to specifically work with this Mac Server software.
 
 
+Install with virtualenv
+-----------------------
+
+Using python packages with virtualenv is the best approach available with least friction. You may need to install virtualenv.  
+
+```
+# if virtualenv is not installed
+# pip install virtualenv
+cd path/to/MacroServerMac
+virtualenv -p /usr/bin/python ./venv
+. ./venv/bin/activate
+pip install -r requirements.txt
+```
+
+
 How to get started
 ------------------
 
