@@ -4,3 +4,4 @@ pyobjc-core==4.2.2
 pyobjc-framework-Cocoa==4.2.2
 pyobjc-framework-Quartz==4.2.2
 wheel==0.24.0
+pync==2.0.3

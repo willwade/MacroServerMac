@@ -19,11 +19,12 @@ optional arguments:
   --port=<PORT>         Change the default Mind Express Port number. [default: 12000]
   --notifier=NOTIFIER   Do you want to use Growl, Notifier, or None to get notified when 
                         a modifier key pressed? [default: Notifier]
-  --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: info]
+  --loglevel=LOGLEVEL   Set the logging level. (debug, warning, info) [default: error]
   --logtype=LOGTYPE     Where do you want the log to go? (stdout, file) [default: file]
   --logfile=LOGFILE     Where should the logging file be located. 
                         [default: ~/Library/Logs/MacroServerMac.log]
 """
+
 # For debug
 import logging
 # For the server
@@ -101,19 +102,19 @@ class GrowlMESender(object):
         )
 
 class LionNotifierMESender(object):
-    """Makes use of the standard notifier that comes in Lion+ https://github.com/maranas/pyNotificationCenter"""
+    """Makes use of the standard notifier that comes in Lion+ https://pypi.org/project/pync/#files"""
     def  __init__(self):    
         """Lion notifier. """
         try:
-            from pyNotificationCenter import pyNotificationCenter
-            self.notifier = pyNotificationCenter()
+            from pync import Notifier
+            self.notifier = Notifier
             self.sendStartUpMessage()
         except ImportError:
-            logging.warning('pyNotificationCenter not installed')
+            logging.warning('pync not installed')
             return
    
     def sendStartUpMessage(self):
-        self.notifier.notify("MacroServer Mac started up..", "MacroServer", "...", sound=True)
+        self.notifier.notify("MacroServer Mac started up..", title="MacroServer")
         logging.info('MacroServer started up')
 
     def sendMessage(self, modifier, state):
@@ -122,7 +123,7 @@ class LionNotifierMESender(object):
         else:
             msg = 'Off'
            
-        self.notifier.notify(modifier+" has been turned "+msg, "MacroServerMac", "...", sound=True)
+        self.notifier.notify(modifier+" has been turned "+msg, title="MacroServerMac")
         logging.info(modifier+" has been turned "+msg)
         logging.debug('pyNotifier called')
 
@@ -228,6 +229,7 @@ if __name__ == '__main__':
    
     # Check logging level 
     numeric_level = getattr(logging, args['--loglevel'].upper(), None)
+    print(numeric_level)
     if not isinstance(numeric_level, int):
         raise ValueError('Invalid log level: %s' % loglevel)
     FORMAT = '%(asctime)s  %(levelname)s %(message)s'
